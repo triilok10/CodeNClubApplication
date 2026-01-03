@@ -121,3 +121,207 @@
     background-color: #4f46e5;
     color: #fff;
 }
+
+/* Premium Background with Soft Violet/Blue */
+.sessions-premium {
+    background: linear-gradient(135deg, #fdfdff 0%, #f3f0ff 100%);
+}
+
+/* Moving Lines Background Effect */
+.line-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+}
+
+.moving-line {
+    position: absolute;
+    width: 200%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.1), transparent);
+    transform: rotate(-15deg);
+    animation: moveLine 8s linear infinite;
+}
+.moving-line:nth-child(1) { top: 20%; animation-delay: 0s; }
+.moving-line:nth-child(2) { top: 50%; animation-delay: 2s; }
+.moving-line:nth-child(3) { top: 80%; animation-delay: 4s; }
+
+@keyframes moveLine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Symmetric Cards */
+.session-card-premium {
+    background: #ffffff;
+    border: 1px solid rgba(79, 70, 229, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+}
+
+.session-card-premium:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.08);
+}
+
+/* Components */
+.badge-live {
+    background: #4f46e5;
+    font-size: 0.65rem;
+    padding: 5px 10px;
+}
+
+.tag-pill {
+    background: #f8fafc;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    font-weight: 500;
+}
+
+.session-link { color: #4f46e5; }
+
+.btn-booking {
+    background: #eef2ff;
+    color: #4f46e5;
+    font-weight: 700;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-booking:hover {
+    background: #4f46e5;
+    color: #fff;
+}
+
+.z-index-1 { position: relative; z-index: 1; }
+
+/* Blog Section Background */
+.blog-section {
+    background: linear-gradient(180deg, #f3f0ff 0%, #ffffff 100%);
+}
+
+/* Blog Card Styling */
+.blog-card {
+    background: #ffffff;
+    border: 1px solid rgba(79, 70, 229, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+}
+
+.blog-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.1);
+}
+
+/* Image Aspect Ratio and Hover */
+.blog-image-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #eef2ff;
+}
+
+.blog-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-image-wrapper img {
+    transform: scale(1.1);
+}
+
+/* Blog Specific Button */
+.btn-blog-action {
+    background-color: #4f46e5;
+    color: white;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-blog-action:hover {
+    background-color: #3730a3;
+    color: white;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+/* Header Text Primary Color */
+.text-primary {
+    color: #4f46e5 !important;
+}
+
+/* Subscription Theme */
+.subscription-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f3ff 100%);
+    border-top: 1px solid #eef2f7;
+}
+
+.sub-icon-wrapper {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.1);
+}
+
+/* Form Styling */
+.subscribe-form .input-group {
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.subscribe-form input {
+    font-size: 1rem;
+    color: #475569;
+}
+
+.subscribe-form input:focus {
+    box-shadow: none;
+    border-color: #e2e8f0;
+}
+
+.subscribe-form .btn-primary {
+    background-color: #4f46e5;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.subscribe-form .btn-primary:hover {
+    background-color: #3730a3;
+    transform: translateX(2px);
+}
+
+/* Background Animation */
+.sub-line-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+.sub-moving-line {
+    position: absolute;
+    top: 50%;
+    width: 200%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #4f46e5, transparent);
+    transform: rotate(5deg);
+    animation: slideLine 10s linear infinite;
+}
+
+@keyframes slideLine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.z-1 { z-index: 1; }
