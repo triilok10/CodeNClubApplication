@@ -65,3 +65,59 @@
     height: 100%;
     opacity: 0.5;
 }
+/* Container Background to match Hero */
+.features-themed {
+    background: radial-gradient(circle at top, #f8faff 0%, #ffffff 100%);
+    border-top: 1px solid #eef2f7;
+}
+
+/* Light Card Styling */
+.feature-card-light {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 40px 20px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card-light:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: #4f46e5;
+}
+
+/* Icon Containers */
+.icon-box {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.bg-soft-blue { background-color: #eef2ff; }
+.bg-soft-orange { background-color: #fff7ed; }
+
+/* Refined Typography */
+.features-themed h2 {
+    color: #1e293b;
+    letter-spacing: -0.02em;
+}
+
+.text-primary { color: #4f46e5 !important; }
+.text-warning { color: #f59e0b !important; }
+
+/* Pill Buttons */
+.btn-outline-primary {
+    border-color: #4f46e5;
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+.btn-outline-primary:hover {
+    background-color: #4f46e5;
+    color: #fff;
+}
