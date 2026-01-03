@@ -1,0 +1,32 @@
+.footer {
+  background-color: #ffffff;
+}
+
+.footer h6 {
+  font-size: 0.95rem;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a,
+.footer-bottom-link {
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover,
+.footer-bottom-link:hover {
+  color: #0d6efd;
+}
+
+.social-icons a {
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+.social-icons a:hover {
+  color: #0d6efd;
+}
