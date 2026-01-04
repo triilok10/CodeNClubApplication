@@ -1,0 +1,19 @@
+.challenges-page {
+    min-height: 80vh;
+}
+
+.bg-violet-subtle {
+    background-color: rgba(124, 58, 237, 0.1);
+}
+
+.text-violet {
+    color: var(--violet);
+}
+
+.mw-600 {
+    max-width: 600px;
+}
+
+.placeholder-card {
+    border-style: dashed !important;
+}

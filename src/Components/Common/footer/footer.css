@@ -84,3 +84,16 @@
 .footer-input-group button {
   border-radius: 8px;
 }
+
+/* Footer Creator Link */
+.creator-link {
+  cursor: pointer !important;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.creator-link:hover {
+  transform: translateY(-2px) scale(1.05);
+  text-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}

@@ -1,0 +1,21 @@
+.pro-page {
+    min-height: 80vh;
+}
+
+.bg-gold-subtle {
+    background-color: rgba(245, 158, 11, 0.1);
+}
+
+.text-gold {
+    color: #f59e0b;
+}
+
+.text-gradient-gold {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mw-600 {
+    max-width: 600px;
+}

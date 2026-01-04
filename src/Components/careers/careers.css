@@ -1,0 +1,11 @@
+.careers-page {
+    min-height: 80vh;
+}
+
+.bg-success-subtle {
+    background-color: rgba(16, 185, 129, 0.1);
+}
+
+.mw-600 {
+    max-width: 600px;
+}
