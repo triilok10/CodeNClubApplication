@@ -299,7 +299,9 @@
 
 /* --- Terminal Mode Git Section --- */
 .git-terminal-section {
-    background-color: #000;
+    background: linear-gradient(to bottom right, #ffffff, #f3f0ff);
+    /* White to soft violet */
+    border-top: 1px solid #e2e8f0;
 }
 
 .grid-overlay {
@@ -308,9 +310,10 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
+    background-image:
+        linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
     z-index: 1;
 }
 
