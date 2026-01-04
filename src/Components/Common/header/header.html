@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center">
-
     <!-- Logo -->
     <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
       <!-- Optional: Add an icon here <i class="bi bi-code-square text-violet fs-4"></i> -->
@@ -8,8 +7,15 @@
     </a>
 
     <!-- Mobile Toggle -->
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-      aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler border-0"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -17,8 +23,13 @@
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/" routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">Home</a>
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/courses" routerLinkActive="active">Courses</a>
@@ -40,10 +51,8 @@
 
       <!-- Right Buttons -->
       <div class="d-flex gap-3 align-items-center">
-        <a href="#" class="text-decoration-none text-muted fw-semibold small px-2">Log In</a>
-        <button class="btn btn-violet-solid btn-sm px-4">
-          Get Started
-        </button>
+        <a href="/login" class="text-decoration-none text-muted fw-semibold small px-2">Log In</a>
+        <button href="/get-started" class="btn btn-violet-solid btn-sm px-4">Get Started</button>
       </div>
     </div>
   </div>

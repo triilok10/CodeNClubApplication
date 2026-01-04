@@ -1,0 +1,92 @@
+<app-auth-header></app-auth-header>
+
+<main class="auth-page">
+    <div class="auth-visual">
+        <div class="visual-content">
+            <h1 class="visual-title">Welcome Back to <br><span>Caffeine.dev</span></h1>
+            <p class="visual-text">Continue your journey into the world of cloud-native architecture and elite
+                engineering.</p>
+            <div class="visual-features">
+                <div class="feature-item">
+                    <i class="bi bi-check2-circle"></i>
+                    <span>Access saved courses</span>
+                </div>
+                <div class="feature-item">
+                    <i class="bi bi-check2-circle"></i>
+                    <span>Track platform progress</span>
+                </div>
+                <div class="feature-item">
+                    <i class="bi bi-check2-circle"></i>
+                    <span>Connect with community</span>
+                </div>
+            </div>
+        </div>
+        <div class="visual-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+    </div>
+
+    <div class="auth-form-container">
+        <div class="form-box">
+            <div class="form-header">
+                <h2>Sign In</h2>
+                <p>Don't have an account? <a routerLink="/get-started">Get Started</a></p>
+            </div>
+
+            <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="bi bi-envelope"></i>
+                        <input type="email" id="email" name="email" [(ngModel)]="loginData.email"
+                            placeholder="name@example.com" required #email="ngModel">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="label-row">
+                        <label for="password">Password</label>
+                        <a href="#" class="forgot-link">Forgot?</a>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="bi bi-lock"></i>
+                        <input type="password" id="password" name="password" [(ngModel)]="loginData.password"
+                            placeholder="••••••••" required #password="ngModel">
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="rememberMe" [(ngModel)]="loginData.rememberMe">
+                        <span class="checkmark"></span>
+                        Keep me signed in
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-auth" [disabled]="!loginForm.form.valid || isSubmitting">
+                    <span *ngIf="!isSubmitting">Sign In <i class="bi bi-arrow-right"></i></span>
+                    <span *ngIf="isSubmitting"><i class="bi bi-arrow-repeat spin"></i> Signing in...</span>
+                </button>
+
+                <div class="divider">
+                    <span>Or continue with</span>
+                </div>
+
+                <div class="social-auth">
+                    <button type="button" class="btn-social">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                            alt="Google">
+                        Google
+                    </button>
+                    <button type="button" class="btn-social">
+                        <i class="bi bi-github"></i>
+                        GitHub
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+

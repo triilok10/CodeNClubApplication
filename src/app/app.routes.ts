@@ -12,6 +12,8 @@ import { Challenges } from '../Components/challenges/challenges';
 import { Pro } from '../Components/pro/pro';
 import { Careers } from '../Components/careers/careers';
 import { BehindCaffeineDev } from '../Components/behind-caffeine-dev/behind-caffeine-dev';
+import { Login } from '../Components/Auth/login/login';
+import { GetStarted } from '../Components/Auth/get-started/get-started';
 
 export const routes: Routes = [
   {
@@ -55,6 +57,14 @@ export const routes: Routes = [
   {
     path: 'behind-caffeine-dev',
     component: BehindCaffeineDev,
+  },
+  {
+    path: 'login',
+    component: Login,
+  },
+  {
+    path: 'get-started',
+    component: GetStarted,
   },
   // Redirect alias for ease of access
   {
