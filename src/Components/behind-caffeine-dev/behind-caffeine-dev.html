@@ -1,14 +1,32 @@
 <app-header></app-header>
 
-<!-- Animated Background -->
-<div class="bg-dots">
-    <div class="dot-layer layer-1"></div>
-    <div class="dot-layer layer-2"></div>
+<!-- Animated Background Dots -->
+<div class="animated-bg">
+    <div class="dot-grid"></div>
+</div>
+
+<!-- Floating Avatar Images -->
+<div class="floating-avatars">
+    <div class="float-avatar avatar-1">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Community">
+    </div>
+    <div class="float-avatar avatar-2">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Community">
+    </div>
+    <div class="float-avatar avatar-3">
+        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Community">
+    </div>
+    <div class="float-avatar avatar-4">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Community">
+    </div>
+    <div class="float-avatar avatar-5">
+        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Community">
+    </div>
 </div>
 
 <div class="trilok-profile">
 
-    <!-- Hero Section: Orbit Design -->
+    <!-- Hero Section: Clean Design -->
     <section class="hero-section">
         <div class="container">
             <div class="hero-grid">
@@ -41,46 +59,59 @@
                     </div>
                 </div>
 
-                <!-- Right: Profile with Tech Orbit -->
-                <div class="hero-orbit-wrapper scroll-animate fade-in-right">
-                    <div class="tech-orbit">
-                        <!-- Orbit Ring -->
-                        <div class="orbit-ring ring-1">
-                            <div class="tech-icon" style="--i: 0;"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
-                                    alt="C#"></div>
-                            <div class="tech-icon" style="--i: 1;"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"
-                                    alt=".NET"></div>
-                            <div class="tech-icon" style="--i: 2;"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg"
-                                    alt="Angular"></div>
-                            <div class="tech-icon" style="--i: 3;"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                                    alt="TypeScript"></div>
-                        </div>
-                        <div class="orbit-ring ring-2">
-                            <div class="tech-icon" style="--i: 0;"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
-                                    alt="SQL Server"></div>
-                            <div class="tech-icon" style="--i: 1;"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
-                                    alt="Azure"></div>
-                            <div class="tech-icon" style="--i: 2;"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                                    alt="Firebase"></div>
-                            <div class="tech-icon" style="--i: 3;"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-                                    alt="Docker"></div>
-                        </div>
-                        <!-- Profile Image Center -->
-                        <div class="orbit-center">
-                            <img src="https://trilok-web-app.web.app/assets/images/trilok_01.jpg" alt="Trilok Swami"
-                                class="profile-img">
-                        </div>
+                <!-- Right: Profile Photo (B&W) -->
+                <div class="hero-image-wrapper scroll-animate fade-in-right">
+                    <div class="profile-ring"></div>
+                    <img src="https://trilok-web-app.web.app/assets/images/trilok_01.jpg" alt="Trilok Swami"
+                        class="hero-profile-img">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Caffeine.dev Project -->
+    <section class="project-section">
+        <div class="container">
+            <div class="project-showcase scroll-animate fade-in-up">
+                <div class="project-badge">
+                    <i class="bi bi-heart-fill"></i>
+                    <span>A Passion Project</span>
+                </div>
+                <h2 class="project-title">Building <span class="gradient-text">Caffeine.dev</span></h2>
+                <p class="project-desc">
+                    You're currently exploring <strong>Caffeine.dev</strong> — a platform I created with a simple
+                    mission:
+                    <strong>to help developers learn, grow, and connect</strong>.
+                </p>
+
+                <div class="project-vision">
+                    <div class="vision-card scroll-animate fade-in-left delay-1">
+                        <div class="vision-icon"><i class="bi bi-book"></i></div>
+                        <h4>Free Learning Resources</h4>
+                        <p>Curated tutorials, guides, and learning paths designed to make complex topics accessible to
+                            everyone—from beginners to senior developers.</p>
+                    </div>
+                    <div class="vision-card scroll-animate fade-in-up delay-2">
+                        <div class="vision-icon"><i class="bi bi-people-fill"></i></div>
+                        <h4>Open Source Community</h4>
+                        <p>A space where developers can collaborate, share knowledge, contribute to projects, and grow
+                            together. Because learning is better when shared.</p>
+                    </div>
+                    <div class="vision-card scroll-animate fade-in-right delay-1">
+                        <div class="vision-icon"><i class="bi bi-rocket-takeoff"></i></div>
+                        <h4>Real-World Projects</h4>
+                        <p>Practical, hands-on projects that go beyond theory. Build real applications, solve real
+                            problems, and create a portfolio that speaks for itself.</p>
                     </div>
                 </div>
 
+                <div class="project-philosophy">
+                    <blockquote>
+                        "I believe that knowledge grows when shared. Caffeine.dev is my small contribution to making the
+                        developer community more inclusive, helpful, and connected."
+                    </blockquote>
+                </div>
             </div>
         </div>
     </section>
@@ -93,19 +124,55 @@
                 <h2 class="section-title">My Engineering <span>Philosophy</span></h2>
             </div>
 
-            <div class="dna-content scroll-animate fade-in-up">
-                <div class="dna-card main">
-                    <p class="dna-lead">
+            <div class="dna-content">
+                <div class="dna-main scroll-animate fade-in-left">
+                    <div class="quote-block">
+                        <i class="bi bi-quote"></i>
+                        <p>"Build for the User, Architect for the Future."</p>
+                    </div>
+
+                    <p class="dna-text">
+                        I don't just write code—I translate complex business workflows into resilient, scalable digital
+                        infrastructure.
                         My engineering philosophy is rooted in the belief that software should be
-                        <strong>self-documenting, maintainable, and sustainable</strong> over time.
+                        <strong>self-documenting,
+                            maintainable, and sustainable</strong> over time.
                     </p>
-                    <p>
+
+                    <p class="dna-text">
                         Before writing a single line of code, I invest heavily in a <strong>pre-coding phase</strong>:
                         understanding real user pain points, operational constraints, and long-term system behavior.
-                        This ensures that the final product is not just a technical success, but a
-                        <span class="highlight">practical, high-impact solution</span> that performs reliably in
-                        real-world environments.
+                        This ensures that the final product is not just a technical success, but a practical,
+                        high-impact solution that performs reliably in real-world environments.
                     </p>
+
+                    <p class="dna-text">
+                        I've learned that the best engineers aren't the ones who write the most clever code—they're
+                        the ones who write code that <span class="highlight">others can understand, extend, and
+                            trust</span>.
+                        Every function I write, every API I design, every database schema I architect is built with
+                        this principle at its core.
+                    </p>
+                </div>
+
+                <div class="dna-principles scroll-animate fade-in-right">
+                    <div class="principle-card">
+                        <span class="principle-num">01</span>
+                        <h4>Understand Before Building</h4>
+                        <p>I spend time understanding the "why" before jumping to the "how". This saves weeks of rework
+                            later.</p>
+                    </div>
+                    <div class="principle-card">
+                        <span class="principle-num">02</span>
+                        <h4>Write for Humans First</h4>
+                        <p>Code is read 10x more than it's written. I prioritize readability and clear intent in every
+                            line.</p>
+                    </div>
+                    <div class="principle-card">
+                        <span class="principle-num">03</span>
+                        <h4>Design for Change</h4>
+                        <p>Requirements evolve. I build systems that can adapt without requiring complete rewrites.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -119,57 +186,57 @@
                 <h2 class="section-title">Harmonizing <span>Both Ends</span></h2>
             </div>
 
-            <p class="section-subtitle scroll-animate fade-in-up">
-                What makes my profile unique is my ability to harmonize both ends of the development spectrum,
-                ensuring systems are <strong>robust internally</strong> and <strong>intuitive externally</strong>.
+            <p class="section-intro scroll-animate fade-in-up">
+                What makes my profile unique is my ability to harmonize both ends of the development spectrum.
+                I don't just build backends that work—I build backends that integrate seamlessly with beautiful,
+                intuitive frontends. The result? Systems that are <strong>robust internally</strong> and
+                <strong>delightful externally</strong>.
             </p>
 
             <div class="bridge-grid">
                 <div class="bridge-card scroll-animate fade-in-left">
                     <div class="bridge-icon backend"><i class="bi bi-server"></i></div>
                     <h4>Backend Precision</h4>
-                    <p>
-                        I architect high-performance APIs and data layers using <strong>.NET Core, SQL Server, and
-                            Dapper ORM</strong>,
-                        with a strong focus on:
+                    <p class="bridge-desc">
+                        I architect high-performance APIs and data layers with a strong focus on
+                        real production loads, not just happy-path scenarios.
                     </p>
-                    <ul>
-                        <li><i class="bi bi-check2"></i> Reducing latency</li>
-                        <li><i class="bi bi-check2"></i> Ensuring data integrity</li>
-                        <li><i class="bi bi-check2"></i> Designing scalable, clean API contracts</li>
+                    <ul class="bridge-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Reducing latency through smart caching</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Ensuring data integrity with proper validation</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Designing scalable, versioned API contracts</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Implementing robust error handling and logging</li>
                     </ul>
-                    <p class="note">Every backend I build is optimized for real production loads—not just happy-path
-                        scenarios.</p>
                 </div>
 
                 <div class="bridge-card scroll-animate fade-in-up delay-1">
                     <div class="bridge-icon frontend"><i class="bi bi-window-desktop"></i></div>
                     <h4>Frontend Fluidity</h4>
-                    <p>
-                        I integrate backends with dynamic <strong>Angular-based interfaces</strong>, ensuring complex
-                        workflows and datasets are presented in a way that is:
+                    <p class="bridge-desc">
+                        I transform complex workflows into intuitive user experiences.
+                        My goal is to make powerful systems feel simple to use.
                     </p>
-                    <ul>
-                        <li><i class="bi bi-check2"></i> Intuitive</li>
-                        <li><i class="bi bi-check2"></i> Responsive</li>
-                        <li><i class="bi bi-check2"></i> User-centric</li>
+                    <ul class="bridge-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Component-based architecture for reusability</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Responsive designs that work on any device</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Smooth animations and micro-interactions</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Accessibility-first approach to UI</li>
                     </ul>
-                    <p class="note">My goal is to make powerful systems feel simple to use.</p>
                 </div>
 
                 <div class="bridge-card scroll-animate fade-in-right delay-1">
                     <div class="bridge-icon glue"><i class="bi bi-link-45deg"></i></div>
-                    <h4>The Glue</h4>
-                    <p>
-                        I specialize in <strong>secure integrations</strong> that bind systems together into a
-                        unified ecosystem:
+                    <h4>The Integration Layer</h4>
+                    <p class="bridge-desc">
+                        I specialize in secure integrations that bind systems together
+                        into a unified ecosystem. Security is always non-negotiable.
                     </p>
-                    <ul>
-                        <li><i class="bi bi-check2"></i> OAuth 2.0 authentication flows</li>
-                        <li><i class="bi bi-check2"></i> Firebase Cloud Messaging (FCM)</li>
-                        <li><i class="bi bi-check2"></i> Third-party integrations (HubSpot)</li>
+                    <ul class="bridge-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Secure authentication flows</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Real-time messaging and notifications</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Third-party API integrations</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Event-driven architectures</li>
                     </ul>
-                    <p class="note">Security, consistency, and reliability are always non-negotiable.</p>
                 </div>
             </div>
         </div>
@@ -183,13 +250,18 @@
                 <h2 class="section-title">Day 1 Deployment <span>Mindset</span></h2>
             </div>
 
+            <p class="section-intro scroll-animate fade-in-up">
+                I bring a "production-ready from Day 1" mentality to every project. This means thinking about
+                monitoring, logging, error handling, and deployment pipelines from the very beginning.
+            </p>
+
             <div class="ops-grid">
                 <div class="ops-card scroll-animate fade-in-left">
                     <div class="ops-icon"><i class="bi bi-clock-history"></i></div>
-                    <h4>Zero-Downtime Mentality</h4>
+                    <h4>Zero-Downtime Deployments</h4>
                     <p>
-                        Hands-on experience managing deployments and patch releases where system uptime is critical,
-                        especially for <strong>enterprise and government platforms</strong>.
+                        Experience managing deployments where system uptime is critical.
+                        Strategies for rolling updates, feature flags, and graceful degradation.
                     </p>
                 </div>
 
@@ -197,8 +269,8 @@
                     <div class="ops-icon"><i class="bi bi-arrow-repeat"></i></div>
                     <h4>Legacy Modernization</h4>
                     <p>
-                        I enjoy refactoring outdated systems—transforming legacy codebases into modern,
-                        <strong>Web API–driven architectures</strong> that reduce technical debt.
+                        Transforming legacy codebases into modern architectures that reduce technical debt,
+                        improve maintainability, and enhance performance.
                     </p>
                 </div>
 
@@ -206,16 +278,17 @@
                     <div class="ops-icon"><i class="bi bi-speedometer2"></i></div>
                     <h4>Performance as a Feature</h4>
                     <p>
-                        Optimization is not an afterthought—it's a requirement.
+                        Optimization is not an afterthought—it's a core product requirement.
+                        I treat speed as seriously as any feature.
                     </p>
-                    <div class="stats-row">
-                        <div class="stat">
-                            <span class="stat-value">45%</span>
-                            <span class="stat-label">Faster Document Processing</span>
+                    <div class="perf-stats">
+                        <div class="perf-item">
+                            <span class="perf-value">45%</span>
+                            <span class="perf-label">Faster Processing</span>
                         </div>
-                        <div class="stat">
-                            <span class="stat-value">60%</span>
-                            <span class="stat-label">Improved Login Performance</span>
+                        <div class="perf-item">
+                            <span class="perf-value">60%</span>
+                            <span class="perf-label">Improved Performance</span>
                         </div>
                     </div>
                 </div>
@@ -223,67 +296,85 @@
         </div>
     </section>
 
-    <!-- Core Competencies Section -->
+    <!-- Technical Toolbelt with Orbit -->
     <section class="skills-section">
         <div class="container">
             <div class="section-header scroll-animate fade-in-down">
                 <span class="section-tag">🛠️ Core Competencies</span>
-                <h2 class="section-title">My <span>Toolbelt</span></h2>
+                <h2 class="section-title">My Technical <span>Toolbelt</span></h2>
             </div>
 
-            <div class="skills-grid">
-                <div class="skill-card scroll-animate fade-in-left delay-1">
-                    <div class="skill-header">
-                        <i class="bi bi-code-slash"></i>
-                        <h5>Strategy & Implementation</h5>
+            <p class="section-intro scroll-animate fade-in-up">
+                Over the years, I've built expertise across a range of technologies. Here's the ecosystem
+                I work with to build scalable, maintainable applications.
+            </p>
+
+            <!-- Tech Orbit Showcase -->
+            <div class="tech-orbit-showcase scroll-animate fade-in-up">
+                <div class="orbit-container">
+                    <!-- Outer Ring -->
+                    <div class="orbit-ring outer-ring">
+                        <div class="orbit-tech" style="--i: 0;"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+                                alt="C#"><span>C#</span></div>
+                        <div class="orbit-tech" style="--i: 1;"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"
+                                alt=".NET"><span>.NET Core</span></div>
+                        <div class="orbit-tech" style="--i: 2;"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg"
+                                alt="Angular"><span>Angular</span></div>
+                        <div class="orbit-tech" style="--i: 3;"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                                alt="TypeScript"><span>TypeScript</span></div>
+                        <div class="orbit-tech" style="--i: 4;"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+                                alt="SQL"><span>SQL Server</span></div>
+                        <div class="orbit-tech" style="--i: 5;"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+                                alt="Azure"><span>Azure</span></div>
                     </div>
-                    <div class="skill-tags">
-                        <span>C#</span>
-                        <span>.NET Core</span>
-                        <span>LINQ</span>
-                        <span>SQL Server</span>
-                        <span>Database Design</span>
+
+                    <!-- Inner Ring -->
+                    <div class="orbit-ring inner-ring">
+                        <div class="orbit-tech" style="--i: 0;"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                                alt="Firebase"><span>Firebase</span></div>
+                        <div class="orbit-tech" style="--i: 1;"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                                alt="Docker"><span>Docker</span></div>
+                        <div class="orbit-tech" style="--i: 2;"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                alt="Git"><span>Git</span></div>
+                        <div class="orbit-tech" style="--i: 3;"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                                alt="Bootstrap"><span>Bootstrap</span></div>
+                    </div>
+
+                    <!-- Center Label -->
+                    <div class="orbit-center-label">
+                        <span class="orbit-label-main">Tech</span>
+                        <span class="orbit-label-sub">Stack</span>
                     </div>
                 </div>
+            </div>
 
-                <div class="skill-card scroll-animate fade-in-up delay-2">
-                    <div class="skill-header">
-                        <i class="bi bi-palette"></i>
-                        <h5>Interface & Experience</h5>
-                    </div>
-                    <div class="skill-tags">
-                        <span>Angular</span>
-                        <span>TypeScript</span>
-                        <span>Bootstrap</span>
-                        <span>jQuery</span>
-                        <span>HTML/CSS</span>
-                    </div>
+            <!-- Skills Categories -->
+            <div class="skills-categories scroll-animate fade-in-up">
+                <div class="skill-category">
+                    <h5><i class="bi bi-server"></i> Backend</h5>
+                    <p>APIs, data layers, and server-side logic that powers applications at scale.</p>
                 </div>
-
-                <div class="skill-card scroll-animate fade-in-up delay-1">
-                    <div class="skill-header">
-                        <i class="bi bi-graph-up-arrow"></i>
-                        <h5>Optimization & Performance</h5>
-                    </div>
-                    <div class="skill-tags">
-                        <span>Dapper ORM</span>
-                        <span>Query Tuning</span>
-                        <span>API Performance</span>
-                        <span>Code Refactoring</span>
-                    </div>
+                <div class="skill-category">
+                    <h5><i class="bi bi-window"></i> Frontend</h5>
+                    <p>Beautiful, responsive interfaces that users love to interact with.</p>
                 </div>
-
-                <div class="skill-card scroll-animate fade-in-right delay-2">
-                    <div class="skill-header">
-                        <i class="bi bi-plug"></i>
-                        <h5>Connectivity & Integrations</h5>
-                    </div>
-                    <div class="skill-tags">
-                        <span>RESTful APIs</span>
-                        <span>Firebase FCM</span>
-                        <span>OAuth 2.0</span>
-                        <span>HubSpot</span>
-                    </div>
+                <div class="skill-category">
+                    <h5><i class="bi bi-database"></i> Data</h5>
+                    <p>Database design, optimization, and data management strategies.</p>
+                </div>
+                <div class="skill-category">
+                    <h5><i class="bi bi-cloud"></i> Cloud</h5>
+                    <p>Cloud infrastructure, deployments, and DevOps practices.</p>
                 </div>
             </div>
         </div>
@@ -294,17 +385,22 @@
         <div class="container">
             <div class="future-card scroll-animate fade-in-up">
                 <div class="future-content">
-                    <span class="section-tag">🚀 Future-Facing Goals</span>
-                    <h3>Bridging to <span>Cloud-Native</span></h3>
-                    <p>
+                    <span class="section-tag light">🚀 Future-Facing Goals</span>
+                    <h3>Bridging to <span>Cloud-Native Architecture</span></h3>
+                    <p class="future-desc">
                         I am actively bridging the gap between traditional software engineering and cloud-native
                         architecture.
-                        My goal is to build systems that are not only scalable and secure, but also
-                        <strong>operationally resilient and future-proof</strong>.
+                        The future of software is distributed, containerized, and globally scalable. My goal is to build
+                        systems that are not only performant and secure, but also <strong>operationally resilient
+                            and future-proof</strong>.
+                    </p>
+                    <p class="future-vision">
+                        I envision a career where I architect systems that handle millions of users, leverage cloud
+                        infrastructure intelligently, and deliver value continuously through automated pipelines.
                     </p>
                     <div class="future-focus">
                         <div class="focus-item"><i class="bi bi-cloud"></i> Microsoft Azure</div>
-                        <div class="focus-item"><i class="bi bi-box"></i> Docker & Containers</div>
+                        <div class="focus-item"><i class="bi bi-box"></i> Docker & Kubernetes</div>
                         <div class="focus-item"><i class="bi bi-arrow-repeat"></i> CI/CD Pipelines</div>
                         <div class="focus-item"><i class="bi bi-diagram-3"></i> Distributed Systems</div>
                     </div>
@@ -317,29 +413,41 @@
     <section class="experience-section">
         <div class="container">
             <div class="section-header scroll-animate fade-in-down">
-                <span class="section-tag">💼 Career</span>
-                <h2 class="section-title">Professional <span>Journey</span></h2>
+                <span class="section-tag">💼 Professional Journey</span>
+                <h2 class="section-title">Career <span>Timeline</span></h2>
             </div>
+
+            <p class="section-intro scroll-animate fade-in-up">
+                My professional journey has been a continuous learning experience. Each role has taught me
+                something new about building software that serves real users and solves real problems.
+            </p>
 
             <div class="experience-timeline">
                 <div class="exp-card current scroll-animate fade-in-left">
                     <div class="exp-marker"></div>
                     <div class="exp-content">
-                        <span class="exp-date">Jan 2025 - Present</span>
+                        <span class="exp-date">January 2025 - Present</span>
                         <h4>Software Engineer</h4>
                         <p class="exp-company">Atishay Limited</p>
-                        <p>Backend-focused Full Stack Developer on Large-Scale Government Solutions. Architecting
-                            state-level systems using .NET Core & Angular.</p>
+                        <p class="exp-desc">
+                            Backend-focused Full Stack Developer working on <strong>large-scale government
+                                solutions</strong>.
+                            Architecting state-level systems that handle complex workflows and serve thousands of users
+                            daily.
+                        </p>
                     </div>
                 </div>
+
                 <div class="exp-card scroll-animate fade-in-right delay-1">
                     <div class="exp-marker"></div>
                     <div class="exp-content">
-                        <span class="exp-date">May 2024 - Jan 2025</span>
+                        <span class="exp-date">May 2024 - January 2025</span>
                         <h4>Jr. Software Developer</h4>
                         <p class="exp-company">Cynosure Technologies</p>
-                        <p>Full-stack Development on Timelabs HR Management Product. Built scalable HRMS modules and
-                            integrated Firebase FCM.</p>
+                        <p class="exp-desc">
+                            Full-stack development on <strong>Timelabs HR Management Product</strong>.
+                            Built scalable modules for payroll processing, attendance tracking, and employee management.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -350,42 +458,73 @@
     <section class="community-section">
         <div class="container">
             <div class="section-header scroll-animate fade-in-down">
-                <span class="section-tag">🤝 Community</span>
+                <span class="section-tag">🤝 Community Involvement</span>
                 <h2 class="section-title">Events & <span>Meetups</span></h2>
             </div>
+
+            <p class="section-intro scroll-animate fade-in-up">
+                What truly defined my 2025 was stepping out of my comfort zone and into communities.
+                Tech grows faster when people grow together.
+            </p>
 
             <div class="community-grid">
                 <div class="community-card scroll-animate fade-in-left delay-1">
                     <i class="bi bi-lightning-charge-fill"></i>
                     <h5>React Rajasthan</h5>
+                    <p>Multiple meetups</p>
                 </div>
                 <div class="community-card scroll-animate fade-in-up delay-2">
                     <i class="bi bi-cloud-fill"></i>
                     <h5>Snowflake UG</h5>
+                    <p>Data engineering</p>
                 </div>
                 <div class="community-card scroll-animate fade-in-up delay-1">
                     <i class="bi bi-google"></i>
                     <h5>Google Cloud AI</h5>
+                    <p>AI/ML workshops</p>
                 </div>
                 <div class="community-card scroll-animate fade-in-right delay-2">
                     <i class="bi bi-bricks"></i>
                     <h5>Databricks UG</h5>
+                    <p>Big data</p>
                 </div>
                 <div class="community-card scroll-animate fade-in-left delay-2">
                     <i class="bi bi-flag-fill"></i>
                     <h5>DevFest Jaipur</h5>
+                    <p>GDG flagship</p>
                 </div>
                 <div class="community-card scroll-animate fade-in-up delay-1">
                     <i class="bi bi-rocket-takeoff-fill"></i>
                     <h5>CopadoCon</h5>
+                    <p>DevOps</p>
                 </div>
                 <div class="community-card scroll-animate fade-in-up delay-2">
                     <i class="bi bi-cloud-arrow-up-fill"></i>
                     <h5>Salesforce</h5>
+                    <p>Ecosystem</p>
                 </div>
                 <div class="community-card scroll-animate fade-in-right delay-1">
                     <i class="bi bi-search"></i>
-                    <h5>SelectorsHub QA</h5>
+                    <h5>SelectorsHub</h5>
+                    <p>QA Testing</p>
+                </div>
+            </div>
+
+            <div class="mentors-appreciation scroll-animate fade-in-up">
+                <div class="mentors-card">
+                    <i class="bi bi-heart-fill"></i>
+                    <h4>Gratitude to the Mentors</h4>
+                    <p>Beyond sessions and swag, the real value came from conversations. Thank you for your time,
+                        guidance, and inspiration.</p>
+                    <div class="mentor-names">
+                        <span>Gaurav Kheterpal</span>
+                        <span>Vikas Bajpai</span>
+                        <span>Shubham Gupta</span>
+                        <span>Kuldeep Sharma</span>
+                        <span>Jagmohan Singh Rathore</span>
+                        <span>Paresh Mayani</span>
+                    </div>
+                    <p class="mentor-motto">"When learning is shared, growth multiplies."</p>
                 </div>
             </div>
         </div>
@@ -395,9 +534,16 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-card scroll-animate fade-in-up">
+                <div class="cta-icon"><i class="bi bi-cup-hot-fill"></i></div>
                 <h2>Let's Build Something Together</h2>
-                <p>Code'n Caffeine Initiative — my personal mission to foster genuine collaboration.
-                    Let's discuss architecture, debug complex issues, or share a virtual coffee.</p>
+                <p class="cta-desc">
+                    <strong>The Caffeine.dev Initiative</strong> — my personal mission to foster genuine collaboration.
+                    Whether you want to discuss architecture, debug a tricky issue, explore opportunities,
+                    or just share a virtual coffee, I'm always excited to connect.
+                </p>
+                <p class="cta-sub">
+                    Drop me a message, and let's see how we can learn from each other.
+                </p>
                 <button (click)="openModal()" class="btn-primary large">
                     <i class="bi bi-chat-heart-fill"></i> Book a 1:1 Connect
                 </button>
