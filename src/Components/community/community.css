@@ -1,0 +1,59 @@
+/* Dark Premium Theme */
+.bg-dark-premium {
+    background-color: #0f172a;
+}
+
+.text-gray-300 {
+    color: #d1d5db;
+}
+
+.text-gray-400 {
+    color: #9ca3af;
+}
+
+.text-violet {
+    color: #8b5cf6;
+}
+
+.bg-violet-soft {
+    background-color: rgba(139, 92, 246, 0.1);
+}
+
+.border-violet-subtle {
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Buttons */
+.btn-violet-solid {
+    background-color: #7c3aed;
+    color: white;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-violet-solid:hover {
+    background-color: #6d28d9;
+    transform: translateY(-2px);
+}
+
+/* Glass Cards */
+.bg-glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+}
+
+.border-white-10 {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Glow Animation */
+.glow-effect {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, rgba(15, 23, 42, 0) 70%);
+    pointer-events: none;
+}

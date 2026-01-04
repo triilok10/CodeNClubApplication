@@ -1,77 +1,68 @@
-<footer class="footer border-top">
-  <div class="container py-5">
-
-    <div class="row gy-4">
+<footer class="footer">
+  <div class="container">
+    <div class="row gy-5">
 
       <!-- Brand -->
-      <div class="col-lg-4 col-md-6">
-        <h5 class="fw-bold text-primary mb-2">Caffeine.dev</h5>
-        <p class="text-muted small">
-          A developer-first community to learn, build, collaborate,
-          and grow together.
+      <div class="col-lg-4 col-md-12">
+        <h5 class="fw-bold d-flex align-items-center gap-2">
+          <span class="text-white">Caffeine<span class="text-violet">.dev</span></span>
+        </h5>
+        <p class="text-secondary pe-lg-5">
+          The ultimate ecosystem for developers to master cloud-native architecture.
+          From first commit to production deploy.
         </p>
 
-        <div class="d-flex gap-3 mt-3 social-icons">
+        <div class="d-flex gap-2 social-icons">
           <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
           <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
           <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" aria-label="Discord"><i class="bi bi-discord"></i></a>
         </div>
       </div>
 
-      <!-- Community -->
-      <div class="col-lg-2 col-md-3 col-6">
-        <h6 class="fw-semibold">Community</h6>
+      <!-- Links -->
+      <div class="col-lg-2 col-md-4 col-6">
+        <h6>Platform</h6>
         <ul class="list-unstyled footer-links">
-          <li><a routerLink="/community">Explore</a></li>
-          <li><a routerLink="/projects">Projects</a></li>
-          <li><a routerLink="/events">Events</a></li>
-          <li><a routerLink="/blog">Blog</a></li>
+          <li><a routerLink="/courses">Learning Paths</a></li>
+          <li><a routerLink="/projects">Real World Projects</a></li>
+          <li><a routerLink="/challenges">Code Challenges</a></li>
+          <li><a routerLink="/pro">Pro Membership</a></li>
         </ul>
       </div>
 
-      <!-- Resources -->
-      <div class="col-lg-2 col-md-3 col-6">
-        <h6 class="fw-semibold">Resources</h6>
+      <div class="col-lg-2 col-md-4 col-6">
+        <h6>Community</h6>
         <ul class="list-unstyled footer-links">
-          <li><a href="#">Docs</a></li>
-          <li><a href="#">Tutorials</a></li>
-          <li><a href="#">Mentorship</a></li>
-          <li><a href="#">Support</a></li>
+          <li><a routerLink="/events">Events & Hackathons</a></li>
+          <li><a routerLink="/blog">Engineering Blog</a></li>
+          <li><a routerLink="/mentors">Find a Mentor</a></li>
+          <li><a routerLink="/careers">Careers</a></li>
         </ul>
       </div>
 
       <!-- Newsletter -->
-      <div class="col-lg-4 col-md-6">
-        <h6 class="fw-semibold">Stay Updated</h6>
-        <p class="text-muted small">
-          Get updates on sessions, blogs & open-source projects.
+      <div class="col-lg-4 col-md-4">
+        <h6>Stay in the Loop</h6>
+        <p class="text-secondary small mb-3">
+          Join 25,000+ developers receiving our weekly architecture deep-dives.
         </p>
-
-        <form class="d-flex gap-2">
-          <input
-            type="email"
-            class="form-control"
-            placeholder="Enter your email"
-          />
-          <button class="btn btn-primary" type="button">
-            Subscribe
-          </button>
-        </form>
+        <div class="input-group footer-input-group">
+          <input type="email" class="form-control shadow-none" placeholder="email@example.com">
+          <button class="btn btn-violet-solid py-2 px-3" type="button">Subscribe</button>
+        </div>
       </div>
 
     </div>
 
-    <hr class="my-4">
-
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-muted">
-      <span>© 2026 Caffeine.dev</span>
-      <div class="d-flex gap-3 mt-2 mt-md-0">
-        <a href="#" class="footer-bottom-link">Privacy</a>
-        <a href="#" class="footer-bottom-link">Terms</a>
-        <a href="#" class="footer-bottom-link">Contact</a>
+    <div
+      class="border-top border-secondary border-opacity-10 mt-5 pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center small">
+      <span class="text-secondary">© 2026 Caffeine.dev Inc. All rights reserved.</span>
+      <div class="d-flex gap-4 mt-3 mt-md-0">
+        <a href="#" class="footer-bottom-link">Privacy Policy</a>
+        <a href="#" class="footer-bottom-link">Terms of Service</a>
+        <a href="#" class="footer-bottom-link">Cookie Settings</a>
       </div>
     </div>
-
   </div>
 </footer>

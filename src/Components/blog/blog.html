@@ -1,0 +1,18 @@
+<app-header></app-header>
+
+<div class="page-wrapper min-vh-100 pb-5">
+    <div class="container pt-5 mt-5">
+        <!-- Featured Post -->
+        <div class="card border-0 shadow-lg rounded-4 overflow-hidden mb-5 text-white position-relative">
+            <img [src]="featured.image" class="w-100 object-fit-cover" style="height: 500px; filter: brightness(0.4);">
+            <div class="card-img-overlay d-flex flex-column justify-content-end p-5">
+                <span class="badge bg-violet mb-3 align-self-start">Featured</span>
+                <h1 class="display-4 fw-bold">{{featured.title}}</h1>
+                <p class="lead text-light opacity-75">{{featured.desc}}</p>
+                <button class="btn btn-light px-4 align-self-start mt-3">Read Article</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

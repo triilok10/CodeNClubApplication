@@ -1,0 +1,62 @@
+<app-header></app-header>
+
+<div class="courses-page bg-light-soft min-vh-100 pb-5">
+
+    <!-- Hero Section -->
+    <section class="courses-hero pt-5 pb-5 text-center position-relative overflow-hidden">
+        <div class="glow-bg"></div>
+        <div class="container position-relative z-2 mt-5">
+            <h1 class="display-4 fw-bold mb-3">Master the <span class="text-violet">Full Stack</span></h1>
+            <p class="lead text-muted mx-auto" style="max-width: 600px;">
+                Curated learning paths designed to take you from "Hello World" to System Architect.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="container mb-5">
+        <div class="filter-bar d-flex justify-content-center flex-wrap gap-2">
+            <button *ngFor="let filter of filters" class="btn btn-filter rounded-pill px-4"
+                [class.active]="activeFilter === filter" (click)="setFilter(filter)">
+                {{ filter }}
+            </button>
+        </div>
+    </section>
+
+    <!-- Course Grid -->
+    <section class="container">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4 animate-fade-up" *ngFor="let course of filteredCourses">
+                <div class="course-card h-100">
+                    <div class="course-thumb">
+                        <img [src]="course.image" [alt]="course.title" loading="lazy" />
+                        <span class="badge-level" [ngClass]="{
+                 'bg-success': course.level === 'Beginner',
+                 'bg-warning': course.level === 'Intermediate',
+                 'bg-danger': course.level === 'Advanced'
+               }">{{ course.level }}</span>
+                    </div>
+                    <div class="course-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-violet fw-bold small text-uppercase tracking-wide">{{ course.stack
+                                }}</span>
+                            <span class="text-muted small"><i class="bi bi-clock me-1"></i> {{ course.duration }}</span>
+                        </div>
+                        <h5 class="fw-bold mb-2">{{ course.title }}</h5>
+                        <p class="text-muted small mb-4 line-clamp-2">{{ course.description }}</p>
+
+                        <button class="btn btn-outline-violet w-100">View Path</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empty State -->
+        <div *ngIf="filteredCourses.length === 0" class="text-center py-5">
+            <p class="text-muted">No courses found for this category yet.</p>
+        </div>
+    </section>
+
+</div>
+
+<app-footer></app-footer>

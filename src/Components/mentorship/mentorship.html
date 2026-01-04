@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<div class="page-wrapper bg-light min-vh-100 pb-5">
+    <div class="container pt-5 mt-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Find your <span class="text-violet">Mentor</span></h2>
+            <p class="text-muted">Book 1:1 sessions with industry experts.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4" *ngFor="let m of mentors">
+                <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+                    <div class="mb-3">
+                        <img src="https://i.pravatar.cc/150?u={{m.name}}" class="rounded-circle" width="100" />
+                    </div>
+                    <h5 class="fw-bold">{{m.name}}</h5>
+                    <p class="text-primary small fw-bold">{{m.role}}</p>
+                    <div class="mb-4">
+                        <span class="badge bg-light text-dark mx-1" *ngFor="let t of m.tags">{{t}}</span>
+                    </div>
+                    <button class="btn btn-violet-solid w-100 rounded-pill">Book Session</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

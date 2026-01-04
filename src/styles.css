@@ -1,1 +1,108 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --violet: #7c3aed;
+  --azure: #3b82f6;
+  --bg-light: #ffffff;
+  --bg-soft: #f8faff;
+}
+
+/* Global Styles & Resets */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #334155;
+  background-color: var(--bg-light);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+/* Utility Classes */
+.text-violet {
+  color: var(--violet) !important;
+}
+
+.text-azure {
+  color: var(--azure) !important;
+}
+
+.bg-light-soft {
+  background-color: var(--bg-soft);
+}
+
+/* Buttons */
+.btn-violet-solid {
+  background: var(--violet);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.btn-violet-solid:hover {
+  background: #6d28d9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
+  color: white;
+}
+
+.btn-outline-soft {
+  background: transparent;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-outline-soft:hover {
+  background: white;
+  color: var(--violet);
+  border-color: var(--violet);
+}
+
+/* Premium Inputs */
+.input-group-premium {
+  display: flex;
+  background: white;
+  padding: 6px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.input-group-premium input {
+  border: none;
+  flex: 1;
+  padding: 12px 20px;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+}
+
+.input-group-premium button {
+  background: var(--violet);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.input-group-premium button:hover {
+  background: #6d28d9;
+}

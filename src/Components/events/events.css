@@ -1,0 +1,21 @@
+.bg-soft {
+    background-color: #f8fafc;
+}
+
+.text-violet {
+    color: #7c3aed;
+}
+
+.bg-violet-soft {
+    background: #f3f0ff;
+}
+
+.btn-outline-violet {
+    border-color: #7c3aed;
+    color: #7c3aed;
+}
+
+.btn-outline-violet:hover {
+    background-color: #7c3aed;
+    color: white;
+}

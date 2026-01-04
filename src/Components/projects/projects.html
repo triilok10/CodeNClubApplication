@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+<div class="page-wrapper bg-light min-vh-100 pb-5">
+    <section class="container pt-5 mt-5">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Built by the <span class="text-violet">Community</span></h2>
+            <p class="text-muted">Open source projects you can contribute to right now.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4" *ngFor="let p of projects">
+                <div class="project-card bg-white rounded-4 overflow-hidden shadow-sm h-100 border">
+                    <div class="project-img position-relative" style="height: 200px;">
+                        <img [src]="p.image" class="w-100 h-100 object-fit-cover" [alt]="p.title">
+                    </div>
+                    <div class="p-4">
+                        <div class="d-flex gap-2 mb-3">
+                            <span class="badge bg-light text-dark border" *ngFor="let t of p.tags">{{t}}</span>
+                        </div>
+                        <h4 class="fw-bold">{{p.title}}</h4>
+                        <p class="text-muted small">{{p.desc}}</p>
+                        <div class="d-flex gap-2 mt-4">
+                            <button class="btn btn-sm btn-dark flex-grow-1"><i class="bi bi-github me-1"></i>
+                                Code</button>
+                            <button class="btn btn-sm btn-outline-dark flex-grow-1"><i class="bi bi-window me-1"></i>
+                                Demo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<app-footer></app-footer>
