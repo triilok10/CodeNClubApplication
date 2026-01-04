@@ -61,81 +61,137 @@
   </div>
 </section>
 
-<section class="stack-grid-clean py-5 bg-light-soft">
-  <div class="container py-5">
+<!-- NEW: Bento Grid Stack Section -->
+<section class="stack-bento-section py-5 position-relative">
+  <div class="ambient-glow-left"></div>
+  <div class="container py-5 position-relative z-2">
     <div class="text-center mb-5">
-      <h2 class="fw-bold">Everything to <span class="text-violet">Succeed</span> as a Developer</h2>
-      <p class="text-muted">High-performance learning for the Microsoft & DevOps Stack.</p>
+      <h2 class="display-5 fw-bold mb-3">The <span class="text-violet">Modern</span> Engineering Stack</h2>
+      <p class="text-muted lead">Master the tools that power the world's largest distributed systems.</p>
     </div>
 
-    <div class="row g-4">
-      <div class="col-md-3">
-        <div class="dev-card">
-          <i class="bi bi-c-circle icon-v"></i>
-          <h5>.NET Core & C#</h5>
-          <p>Internals, Memory Management, and OOPS patterns.</p>
+    <div class="bento-grid">
+      <!-- Main Item: .NET -->
+      <div class="bento-card bento-lg">
+        <div class="card-content">
+          <div class="icon-wrapper bg-violet-soft">
+            <i class="bi bi-microsoft text-violet"></i>
+          </div>
+          <h3>.NET 9 Core</h3>
+          <p>Memory manipulation, Span&lt;T&gt;, and high-performance JIT compilation internals.</p>
+          <div class="tech-tags">
+            <span>C# 12</span><span>AOT</span><span>Garbage Collection</span>
+          </div>
+        </div>
+        <div class="card-visual visual-net"></div>
+      </div>
+
+      <!-- Item: Azure -->
+      <div class="bento-card bento-md">
+        <div class="card-content">
+          <div class="icon-wrapper bg-azure-soft">
+            <i class="bi bi-cloud-fill text-azure"></i>
+          </div>
+          <h3>Azure Cloud</h3>
+          <p>Serverless architecture and Event Mesh patterns.</p>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="dev-card">
-          <i class="bi bi-cloud-check icon-a"></i>
-          <h5>Azure & Cloud</h5>
-          <p>Serverless, SQL Azure, and Enterprise Architecture.</p>
+
+      <!-- Item: K8s -->
+      <div class="bento-card bento-md">
+        <div class="card-content">
+          <div class="icon-wrapper bg-dark-soft">
+            <i class="bi bi-box-seam-fill text-white"></i>
+          </div>
+          <h3>Kubernetes</h3>
+          <p>Orchestration at scale. Helm, Istio, and GitOps.</p>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="dev-card">
-          <i class="bi bi-terminal icon-v"></i>
-          <h5>Kubernetes</h5>
-          <p>Orchestration, Dockerization, and Helm charts.</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="dev-card">
-          <i class="bi bi-code-square icon-a"></i>
-          <h5>Angular & TS</h5>
-          <p>RxJS, State Management, and Enterprise Frontend.</p>
+
+      <!-- Item: Frontend -->
+      <div class="bento-card bento-wide">
+        <div class="card-content d-flex align-items-center justify-content-between">
+          <div>
+            <div class="icon-wrapper bg-danger-soft mb-3">
+              <i class="bi bi-filetype-ts text-danger"></i>
+            </div>
+            <h3>Angular & TypeScript</h3>
+            <p class="mb-0">Enterprise-grade frontend architecture.</p>
+          </div>
+          <div class="visual-frontend">
+            <!-- CSS Mockup elements could go here -->
+            <div class="code-snippet-mini">
+              <span class="c-p">@Component</span>(&#123;...&#125;)
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="git-integration py-5 bg-white border-top">
-  <div class="container py-5">
+<!-- NEW: Terminal Mode Git Section -->
+<section class="git-terminal-section py-5 bg-black text-white position-relative overflow-hidden">
+  <div class="grid-overlay"></div>
+  <div class="container py-5 position-relative z-2">
     <div class="row align-items-center">
-      <div class="col-lg-5">
-        <div class="d-flex align-items-center gap-2 mb-3">
-          <i class="bi bi-github fs-3 text-violet"></i>
-          <span class="fw-bold tracking-widest text-uppercase small text-muted">Open Source Core</span>
+      <div class="col-lg-5 mb-5 mb-lg-0">
+        <div class="terminal-badge mb-3">
+          <span class="active-dot"></span> OPEN SOURCE CORE
         </div>
-        <h2 class="display-5 fw-bold mb-4">Build the future of <span class="text-violet">DevHub</span></h2>
-        <p class="text-secondary mb-4">
-          Our flagship decentralized portfolio builder is open for contributions. Master <strong>.NET 9
-            Microservices</strong>, <strong>PostgreSQL</strong>, and <strong>Docker</strong> by solving real-world
-          issues.
+        <h2 class="display-4 fw-bold mb-4">Commit Code.<br><span class="text-gradient-green">Deploy Impact.</span></h2>
+        <p class="text-gray-400 mb-5 lead">
+          Don't just watch videos. Contribute to <strong>real-world open source projects</strong> used by thousands.
+          Learn Git flow, code reviews, and CI/CD pipelines in action.
         </p>
-        <div class="git-stats d-flex gap-4 mb-4">
-          <div class="stat"><strong>1.2k</strong> <span class="text-muted">Stars</span></div>
-          <div class="stat"><strong>450</strong> <span class="text-muted">Forks</span></div>
-          <div class="stat"><strong>12</strong> <span class="text-muted">Open Issues</span></div>
-        </div>
-        <button class="btn btn-violet-solid px-4 py-2">View Repository</button>
-      </div>
-      <div class="col-lg-6 offset-lg-1">
-        <div class="code-window-premium shadow-lg">
-          <div class="window-header">
-            <div class="dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
-            <div class="file-name">devhub-cli.cs</div>
+        <div class="d-flex gap-4 border-start border-secondary ps-4">
+          <div>
+            <h3 class="fw-bold mb-0 text-white">1.2k</h3>
+            <small class="text-gray-500">Stars</small>
           </div>
-          <div class="window-body">
-            <pre><code><span class="t-v">dotnet</span> tool install -g Caffeine.DevHub
-<span class="t-v">devhub</span> auth login
-<span class="t-v">devhub</span> deploy --cluster azure-prod
+          <div>
+            <h3 class="fw-bold mb-0 text-white">98%</h3>
+            <small class="text-gray-500">Merged</small>
+          </div>
+          <div>
+            <h3 class="fw-bold mb-0 text-white">450+</h3>
+            <small class="text-gray-500">Contributors</small>
+          </div>
+        </div>
+      </div>
 
-<span class="t-g">// Output:</span>
-<span class="t-g">✔</span> Environment synchronized
-<span class="t-g">✔</span> Kubernetes manifest generated
-<span class="t-y">!</span> Ready for high-scale traffic</code></pre>
+      <div class="col-lg-7">
+        <div class="terminal-window shadow-lg">
+          <div class="terminal-header">
+            <div class="buttons">
+              <span class="close"></span><span class="minimize"></span><span class="maximize"></span>
+            </div>
+            <div class="title">bash — 80x24</div>
+          </div>
+          <div class="terminal-body">
+            <div class="command-line">
+              <span class="prompt">user@devhub:~$</span> git clone https://github.com/caffeine/core.git
+            </div>
+            <div class="output mb-3">
+              Cloning into 'core'...<br>
+              remote: Enumerating objects: 4502, done.<br>
+              remote: Total 4502 (delta 294), reused 120 (delta 40)<br>
+              Receiving objects: 100% (4502/4502), 12.40 MiB | 4.20 MiB/s, done.
+            </div>
+
+            <div class="command-line">
+              <span class="prompt">user@devhub:~$</span> cd core && dotnet build
+            </div>
+            <div class="output mb-3">
+              <span class="text-success">Build succeeded.</span><br>
+              0 Warning(s)<br>
+              0 Error(s)<br>
+              <br>
+              Time Elapsed 00:00:02.45
+            </div>
+
+            <div class="command-line active">
+              <span class="prompt">user@devhub:~/core$</span> <span class="cursor">_</span>
+            </div>
           </div>
         </div>
       </div>
@@ -214,59 +270,37 @@
   <div class="container py-5">
     <div class="row align-items-center mb-5">
       <div class="col-lg-6">
-        <h2 class="display-6 fw-bold mb-3">The <span class="text-violet">Developer's</span> Story</h2>
-        <p class="lead text-muted">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <span class="badge bg-violet-soft text-violet rounded-pill border border-violet-subtle px-3 py-2 fw-bold">OUR
+            MISSION</span>
+        </div>
+        <h2 class="display-4 fw-bold mb-4">The <span class="text-violet">Developer's</span> Story</h2>
+        <p class="lead text-secondary mb-4" style="line-height: 1.8;">
           Code N Club isn't just about tutorials. It's about the relentless pursuit of engineering excellence. We
           believe every line of code tells a story of problem-solving, creativity, and impact.
         </p>
-      </div>
-      <div class="col-lg-6 text-lg-end">
-        <button class="btn btn-violet-solid">Join Our Community</button>
-      </div>
-    </div>
 
-    <div class="story-grid">
-      <div class="story-card">
-        <div class="story-icon">
-          <i class="bi bi-rocket-takeoff-fill"></i>
-        </div>
-        <h4 class="story-title">From Junior to Lead</h4>
-        <p class="story-text">
-          "I started here knowing basic C#. Two years later, I'm architecting microservices for a fintech unicorn. This
-          platform bridges the gap between theory and production."
-        </p>
-        <div class="d-flex align-items-center mt-3">
-          <img src="https://i.pravatar.cc/40?u=10" class="rounded-circle me-2" alt="Dev">
-          <small class="fw-bold text-dark">Sarah J. <span class="text-muted fw-normal">- Tech Lead</span></small>
+        <div class="d-flex gap-5 mt-5 border-top pt-4">
+          <div>
+            <h3 class="fw-bold mb-0">10k+</h3>
+            <p class="text-muted small">Active Learners</p>
+          </div>
+          <div>
+            <h3 class="fw-bold mb-0">500+</h3>
+            <p class="text-muted small">Projects Shipped</p>
+          </div>
         </div>
       </div>
-      <div class="story-card">
-        <div class="story-icon">
-          <i class="bi bi-people-fill"></i>
+      <div class="col-lg-5 offset-lg-1 text-center">
+        <!-- Geometric/Abstract graphic placeholder style -->
+        <div class="position-relative p-5 rounded-circle bg-light-soft d-inline-block">
+          <div class="position-absolute top-50 start-50 translate-middle"
+            style="width: 300px; height: 300px; background: radial-gradient(rgba(124,58,237,0.1), transparent 70%);">
+          </div>
+          <i class="bi bi-quote text-violet opacity-25" style="font-size: 8rem;"></i>
         </div>
-        <h4 class="story-title">Community Driven</h4>
-        <p class="story-text">
-          "The peer reviews on my capstone project were brutal but necessary. I learned more from the community code
-          reviews here than I did in my entire college degree."
-        </p>
-        <div class="d-flex align-items-center mt-3">
-          <img src="https://i.pravatar.cc/40?u=11" class="rounded-circle me-2" alt="Dev">
-          <small class="fw-bold text-dark">Alex M. <span class="text-muted fw-normal">- Backend Dev</span></small>
-        </div>
-      </div>
-      <div class="story-card">
-        <div class="story-icon">
-          <i class="bi bi-lightbulb-fill"></i>
-        </div>
-        <h4 class="story-title">Building Real Products</h4>
-        <p class="story-text">
-          "Finally, a place that teaches you how to deploy, monitor, and scale. I built 'DevHub' following the advanced
-          track and it got me hired instantly."
-        </p>
-        <div class="d-flex align-items-center mt-3">
-          <img src="https://i.pravatar.cc/40?u=12" class="rounded-circle me-2" alt="Dev">
-          <small class="fw-bold text-dark">Priya K. <span class="text-muted fw-normal">- Fullstack
-              Engineer</span></small>
+        <div class="mt-4">
+          <button class="btn btn-violet-solid px-5 py-3 rounded-pill shadow-lg">Join Our Community</button>
         </div>
       </div>
     </div>
@@ -276,78 +310,126 @@
 <section class="roadmap-section py-5 bg-white overflow-hidden">
   <div class="container py-5">
     <div class="text-center mb-5">
-      <h2 class="fw-bold">Engineering <span class="text-violet">Pathways</span></h2>
-      <p class="text-muted">The definitive journey from BTech/MCA to Senior All-Stack Mastery.</p>
+      <h2 class="display-5 fw-bold mb-3">Engineering <span class="text-violet">Pathways</span></h2>
+      <p class="text-muted lead">The definitive roadmap from Hello World to Senior Architect.</p>
     </div>
 
-    <div class="roadmap-container position-relative">
-      <svg class="roadmap-line-svg d-none d-lg-block" viewBox="0 0 1000 800">
-        <path d="M750,150 Q900,250 750,350 T750,550" fill="none" stroke="#f3f0ff" stroke-width="40"
-          stroke-linecap="round" />
-        <path class="animated-trace" d="M750,150 Q900,250 750,350 T750,550" fill="none" stroke="#7c3aed"
-          stroke-width="4" stroke-dasharray="10,10" />
-      </svg>
-
+    <div class="roadmap-container">
+      <!-- Step 1 -->
       <div class="roadmap-step step-left">
         <div class="step-number">1</div>
         <div class="roadmap-card">
-          <div class="card-header-tech">
-            <i class="bi bi-window-sidebar text-violet"></i>
-            <h5>The Presentation Layer</h5>
+          <div class="card-header-tech mb-3">
+            <i class="bi bi-window-sidebar text-violet fs-3 mb-2 d-block"></i>
+            <h4 class="fw-bold">Presentation Layer</h4>
           </div>
-          <p class="small text-muted">Master the UI architecture before diving deep.</p>
-          <div class="tech-stack-pills">
-            <span>Angular 18+</span> <span>TypeScript</span> <span>RxJS</span> <span>Sass</span>
+          <p class="text-muted small">Master the UI architecture before diving deep into the backend.</p>
+
+          <!-- Hover Popup -->
+          <div class="roadmap-popup">
+            <span class="popup-title">What you'll learn</span>
+            <ul class="popup-list">
+              <li><i class="bi bi-check-circle-fill"></i> Component Lifecycle</li>
+              <li><i class="bi bi-check-circle-fill"></i> RxJS Observables</li>
+              <li><i class="bi bi-check-circle-fill"></i> State Management (NgRx)</li>
+            </ul>
           </div>
         </div>
-        <div class="connector-arrow-right"></div>
       </div>
 
+      <!-- Step 2 -->
       <div class="roadmap-step step-right">
-        <div class="connector-arrow-left"></div>
         <div class="step-number">2</div>
         <div class="roadmap-card">
-          <div class="card-header-tech">
-            <i class="bi bi-cpu text-azure"></i>
-            <h5>Core Engine & Patterns</h5>
+          <div class="card-header-tech mb-3">
+            <i class="bi bi-cpu text-azure fs-3 mb-2 d-block"></i>
+            <h4 class="fw-bold">Core Engine</h4>
           </div>
-          <p class="small text-muted">Business logic, SOLID principles, and concurrency.</p>
-          <div class="tech-stack-pills">
-            <span>.NET 9</span> <span>C# Core</span> <span>OOPS</span> <span>Entity Framework</span>
+          <p class="text-muted small">Business logic, SOLID principles, and concurrency patterns.</p>
+
+          <!-- Hover Popup -->
+          <div class="roadmap-popup">
+            <span class="popup-title">Key Concepts</span>
+            <ul class="popup-list">
+              <li><i class="bi bi-check-circle-fill"></i> Dependency Injection</li>
+              <li><i class="bi bi-check-circle-fill"></i> Async/Await & Tasks</li>
+              <li><i class="bi bi-check-circle-fill"></i> Memory Management</li>
+            </ul>
           </div>
         </div>
       </div>
 
+      <!-- Step 3 -->
       <div class="roadmap-step step-left">
         <div class="step-number">3</div>
         <div class="roadmap-card">
-          <div class="card-header-tech">
-            <i class="bi bi-database-fill text-violet"></i>
-            <h5>Persistence & System Design</h5>
+          <div class="card-header-tech mb-3">
+            <i class="bi bi-database-fill text-violet fs-3 mb-2 d-block"></i>
+            <h4 class="fw-bold">Persistence & Scale</h4>
           </div>
-          <p class="small text-muted">High-scale DB design and architectural patterns.</p>
-          <div class="tech-stack-pills">
-            <span>PostgreSQL</span> <span>Redis</span> <span>Microservices</span> <span>Design Patterns</span>
+          <p class="text-muted small">High-scale DB design, Microservices, and Eventual Consistency.</p>
+
+          <!-- Hover Popup -->
+          <div class="roadmap-popup">
+            <span class="popup-title">Architecture</span>
+            <ul class="popup-list">
+              <li><i class="bi bi-check-circle-fill"></i> EF Core Optimization</li>
+              <li><i class="bi bi-check-circle-fill"></i> Distributed Caching (Redis)</li>
+              <li><i class="bi bi-check-circle-fill"></i> Message Queues (RabbitMQ)</li>
+            </ul>
           </div>
         </div>
-        <div class="connector-arrow-right"></div>
       </div>
 
+      <!-- Step 4 -->
       <div class="roadmap-step step-right">
-        <div class="connector-arrow-left"></div>
         <div class="step-number">4</div>
         <div class="roadmap-card">
-          <div class="card-header-tech">
-            <i class="bi bi-clouds-fill text-azure"></i>
-            <h5>Deployment & Orchestration</h5>
+          <div class="card-header-tech mb-3">
+            <i class="bi bi-clouds-fill text-azure fs-3 mb-2 d-block"></i>
+            <h4 class="fw-bold">Cloud Native</h4>
           </div>
-          <p class="small text-muted">Final stage: Source control and cloud-native scaling.</p>
-          <div class="tech-stack-pills">
-            <span>Azure</span> <span>Docker</span> <span>K8s</span> <span>GitHub Actions</span>
+          <p class="text-muted small">Containerization, Orchestration, and CI/CD Pipelines.</p>
+
+          <!-- Hover Popup -->
+          <div class="roadmap-popup">
+            <span class="popup-title">Production Skills</span>
+            <ul class="popup-list">
+              <li><i class="bi bi-check-circle-fill"></i> Docker & Kubernetes</li>
+              <li><i class="bi bi-check-circle-fill"></i> GitHub Actions</li>
+              <li><i class="bi bi-check-circle-fill"></i> Azure DevOps</li>
+            </ul>
           </div>
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- NEW: Community Faces / Happy Learners -->
+<section class="face-network-section py-5 text-center">
+  <div class="container">
+    <h3 class="fw-bold mb-4">Join <span class="text-violet">10,000+</span> Happy Learners</h3>
+    <p class="text-muted mb-4">You're not alone. Learn alongside developers from top companies.</p>
+
+    <div class="face-grid">
+      <div class="face-item"><img src="https://i.pravatar.cc/100?u=21" alt="User"></div>
+      <div class="face-item"><img src="https://i.pravatar.cc/100?u=22" alt="User"></div>
+      <div class="face-item"><img src="https://i.pravatar.cc/100?u=23" alt="User"></div>
+      <div class="face-item"><img src="https://i.pravatar.cc/100?u=24" alt="User"></div>
+      <div class="face-item"><img src="https://i.pravatar.cc/100?u=25" alt="User"></div>
+      <div class="face-item"><img src="https://i.pravatar.cc/100?u=26" alt="User"></div>
+      <div class="face-item"><img src="https://i.pravatar.cc/100?u=27" alt="User"></div>
+      <div class="face-item"><img src="https://i.pravatar.cc/100?u=28" alt="User"></div>
+    </div>
+
+    <div class="mt-4">
+      <div class="d-inline-flex align-items-center gap-2 text-warning fs-5">
+        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+          class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        <span class="text-dark fw-bold fs-6 ms-2">4.9/5 Rating</span>
+      </div>
     </div>
   </div>
 </section>

@@ -1,4 +1,3 @@
-
 .dots-background {
     position: absolute;
     top: 0;
@@ -168,86 +167,302 @@
     }
 }
 
-/* --- Features / Stack Grid --- */
-.stack-grid-clean {
-    background-color: var(--bg-soft);
-    position: relative;
-}
-
-.dev-card {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 30px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    /* Glass border */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    height: 100%;
-}
-
-.dev-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.12);
-    border-color: rgba(124, 58, 237, 0.3);
-}
-
-.icon-v {
-    color: var(--violet);
-    font-size: 2rem;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.icon-a {
-    color: var(--azure);
-    font-size: 2rem;
-    margin-bottom: 15px;
-    display: block;
-}
-
-/* --- Git Integration Section --- */
-.git-integration {
-    background-color: white;
-    position: relative;
-    z-index: 10;
-}
-
-.git-stats .stat strong {
-    font-size: 1.5rem;
-    display: block;
-    color: var(--violet);
-}
-
-/* Premium Code Window */
-.code-window-premium {
-    background: #1a1a1a;
-    border-radius: 16px;
+/* --- Bento Grid Stack Section --- */
+.stack-bento-section {
+    background-color: #f8fafc;
     overflow: hidden;
-    font-family: 'Fira Code', monospace;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    border: 1px solid #333;
 }
 
-.window-header {
-    background: #2d2d2d;
-    padding: 12px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #333;
+.ambient-glow-left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
-.dots span {
-    height: 10px;
-    width: 10px;
-    margin-right: 6px;
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(250px, auto));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-.window-body {
+.bento-card {
+    background: white;
+    border-radius: 24px;
     padding: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+    border-color: rgba(124, 58, 237, 0.2);
+}
+
+.bento-lg {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.bento-md {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.bento-wide {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.icon-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.bento-card:hover .icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.bg-violet-soft {
+    background: #f3f0ff;
+}
+
+.bg-azure-soft {
+    background: #eff6ff;
+}
+
+.bg-dark-soft {
+    background: #1e293b;
+}
+
+.bg-danger-soft {
+    background: #fef2f2;
+}
+
+.bento-card h3 {
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.bento-card p {
+    color: #64748b;
     font-size: 0.95rem;
-    line-height: 1.7;
+    line-height: 1.6;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.tech-tags span {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.card-visual {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, #ffffff, transparent);
+    z-index: 0;
+}
+
+/* --- Terminal Mode Git Section --- */
+.git-terminal-section {
+    background-color: #000;
+}
+
+.grid-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 1;
+}
+
+.text-gradient-green {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gray-400 {
+    color: #9ca3af;
+}
+
+.text-gray-500 {
+    color: #6b7280;
+}
+
+.terminal-badge {
+    background: rgba(34, 197, 94, 0.1);
+    color: #4ade80;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.active-dot {
+    width: 8px;
+    height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #4ade80;
+    animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4);
+    }
+
+    70% {
+        opacity: 1;
+        box-shadow: 0 0 0 10px rgba(74, 222, 128, 0);
+    }
+
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+    }
+}
+
+/* Authentic Terminal Window */
+.terminal-window {
+    background: #0f172a;
+    /* Slate 900 */
+    border-radius: 12px;
+    border: 1px solid #334155;
+    font-family: 'Fira Code', monospace;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: #1e293b;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+}
+
+.terminal-header .buttons {
+    display: flex;
+    gap: 6px;
+    margin-right: 16px;
+}
+
+.terminal-header .buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-header .buttons .close {
+    background: #ef4444;
+}
+
+.terminal-header .buttons .minimize {
+    background: #f59e0b;
+}
+
+.terminal-header .buttons .maximize {
+    background: #22c55e;
+}
+
+.terminal-header .title {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 0 auto;
+    transform: translateX(-28px);
+}
+
+.terminal-body {
+    padding: 24px;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.prompt {
+    color: #4ade80;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+.command-line {
+    margin-bottom: 4px;
+    display: flex;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Mobile Reponsiveness for new sections */
+@media (max-width: 991px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .bento-lg,
+    .bento-md,
+    .bento-wide {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+
+    .terminal-window {
+        margin-top: 40px;
+    }
 }
 
 /* --- Blog Section --- */
@@ -292,14 +507,68 @@
 
 .badge-tag {
     background: #f3f0ff;
-    color: #7c3aed;
+    color: var(--violet);
+    padding: 6px 14px;
+    border-radius: 30px;
     font-size: 0.75rem;
     font-weight: 700;
-    padding: 6px 14px;
-    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     display: inline-block;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
+
+.blog-content h4 {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.blog-content p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 15px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+/* --- Developer Story / Community Section --- */
+.developer-story-section {
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.developer-story-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 600px;
+    height: 100%;
+    background: radial-gradient(circle at center right, rgba(124, 58, 237, 0.05) 0%, transparent 70%);
+}
+
+.developer-story-section h2 {
+    letter-spacing: -0.5px;
+}
+
+
 
 /* Animations */
 @keyframes fadeInUp {
@@ -370,139 +639,269 @@
     margin-bottom: 1.5rem;
 }
 
-/* --- Roadmap / Pathways --- */
+/* --- Roadmap / Pathways Redesign --- */
 .roadmap-container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
     position: relative;
+    padding: 20px 0;
 }
 
-.roadmap-line-svg {
+/* Central Line */
+.roadmap-container::before {
+    content: '';
     position: absolute;
+    left: 50%;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    opacity: 0.5;
-}
-
-.animated-trace {
-    animation: traceLine 8s linear infinite;
-}
-
-@keyframes traceLine {
-    to {
-        stroke-dashoffset: -1000;
-    }
+    bottom: 0;
+    width: 4px;
+    background: #e2e8f0;
+    transform: translateX(-50%);
+    border-radius: 2px;
 }
 
 .roadmap-step {
     display: flex;
+    justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 2;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
+    width: 100%;
 }
 
-.step-left {
-    justify-content: flex-start;
-    text-align: right;
-    padding-right: 50%;
+.roadmap-step:last-child {
+    margin-bottom: 0;
 }
 
-.step-right {
-    justify-content: flex-end;
-    text-align: left;
-    padding-left: 50%;
-}
-
-.roadmap-card {
+.roadmap-step .step-number {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
     background: white;
-    border: 1px solid #eef2f6;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    width: 90%;
-    /* Slight offset from center */
-    transition: 0.3s;
-}
-
-.roadmap-card:hover {
-    border-color: var(--violet);
-    transform: scale(1.02);
-}
-
-.step-number {
-    width: 50px;
-    height: 50px;
-    background: white;
-    border: 3px solid #f3f0ff;
-    color: #7c3aed;
+    border: 4px solid var(--violet);
+    border-radius: 50%;
+    color: var(--violet);
+    font-weight: 800;
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    font-weight: 900;
-    font-size: 1.2rem;
-    margin: 0 25px;
-    flex-shrink: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    box-shadow: 0 0 0 8px rgba(124, 58, 237, 0.1);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.tech-stack-pills span {
-    font-size: 0.75rem;
-    background: #f1f5f9;
-    color: #475569;
-    border-radius: 6px;
-    padding: 4px 10px;
-    font-weight: 600;
+.roadmap-step:hover .step-number {
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 0 0 12px rgba(124, 58, 237, 0.2);
+    background: var(--violet);
+    color: white;
 }
 
-/* Arrows */
-.connector-arrow-right::after,
-.connector-arrow-left::before {
-    font-size: 2rem;
-    color: #f59e0b;
-    opacity: 0.6;
+/* Cards positioning */
+.roadmap-card {
+    width: 42%;
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    position: relative;
+    transition: all 0.4s ease;
+    z-index: 5;
+}
+
+.step-left .roadmap-card {
+    margin-right: auto;
+    text-align: right;
+}
+
+.step-right .roadmap-card {
+    margin-left: auto;
+    text-align: left;
+}
+
+.roadmap-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(124, 58, 237, 0.15);
+    border-color: rgba(124, 58, 237, 0.3);
+}
+
+/* Connecting Horizontal Lines */
+.roadmap-card::after {
+    content: '';
     position: absolute;
-}
-
-.connector-arrow-right::after {
-    content: '→';
-    right: 42%;
     top: 50%;
-    transform: translateY(-50%);
+    width: calc(18% + 2px);
+    /* Distance to center */
+    height: 2px;
+    background: #e2e8f0;
+    transition: width 0.3s;
 }
 
-.connector-arrow-left::before {
-    content: '←';
-    left: 42%;
-    top: 50%;
-    transform: translateY(-50%);
+.step-left .roadmap-card::after {
+    right: -21%;
 }
 
-/* Mobile adjustments */
-@media (max-width: 991px) {
+/* Gaps */
+.step-right .roadmap-card::after {
+    left: -21%;
+}
 
-    .step-left,
-    .step-right {
-        justify-content: center;
-        text-align: center;
-        padding: 0;
+/* Hover Popups (Tooltips) */
+.roadmap-popup {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 280px;
+    background: #1e293b;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 20;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    pointer-events: none;
+}
+
+.roadmap-popup::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #1e293b transparent;
+}
+
+.roadmap-card:hover .roadmap-popup {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.popup-title {
+    color: #4ade80;
+    /* Green accent */
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.popup-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.popup-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    color: #cbd5e1;
+}
+
+.popup-list li i {
+    color: var(--violet);
+}
+
+/* --- Face Network / Happy Learners --- */
+.face-network-section {
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.face-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.face-item {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.face-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.face-item:hover {
+    transform: scale(1.2) translateY(-5px);
+    z-index: 10;
+    border-color: var(--violet);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .roadmap-container::before {
+        left: 30px;
+    }
+
+    .roadmap-step {
         flex-direction: column;
+        align-items: flex-start;
+        margin-left: 30px;
+        width: auto;
     }
 
-    .roadmap-line-svg {
+    .roadmap-step .step-number {
+        left: 0;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .roadmap-card {
+        width: 100%;
+        margin: 0 0 0 30px !important;
+        text-align: left !important;
+    }
+
+    .step-left .roadmap-card::after,
+    .step-right .roadmap-card::after {
         display: none;
     }
 
-    .connector-arrow-right::after,
-    .connector-arrow-left::before {
-        display: none;
+    .roadmap-popup {
+        left: 0;
+        transform: translateX(0) translateY(10px);
+        width: 100%;
+        position: relative;
+        top: 10px;
     }
 
-    .step-number {
-        margin: 20px auto;
+    .roadmap-card:hover .roadmap-popup {
+        transform: translateX(0) translateY(0);
+    }
+
+    .roadmap-popup::before {
+        left: 20px;
     }
 }
