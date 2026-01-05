@@ -1,69 +1,73 @@
 .auth-header {
-    padding: 24px 0;
-    background: transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
+  padding: 24px 0;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
 .auth-header .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 800;
-    color: white;
-    text-decoration: none;
-    letter-spacing: -0.5px;
+  font-size: 24px;
+  font-weight: 800;
+  color: rgb(5, 5, 5);
+  text-decoration: none;
+  letter-spacing: -0.5px;
 }
 
 .logo .dot {
-    color: #7c3aed;
+  color: #7c3aed;
 }
 
 .btn-back {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #475569;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    padding: 8px 16px;
-    border-radius: 100px;
-    background: #f1f5f9;
-    border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 100px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
 }
 
 .btn-back:hover {
-    color: #7c3aed;
-    background: white;
-    transform: translateX(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  color: #7c3aed;
+  background: white;
+  transform: translateX(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 @media (max-width: 576px) {
-    .btn-back span {
-        display: none;
-    }
+  .btn-back span {
+    display: none;
+  }
 
-    .btn-back {
-        padding: 8px;
-        border-radius: 50%;
-        width: 36px;
-        height: 36px;
-        justify-content: center;
-    }
+  .btn-back {
+    padding: 8px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+  }
+
+  .logo {
+    color: rgb(11, 11, 11);
+  }
 }
