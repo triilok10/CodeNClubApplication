@@ -78,7 +78,7 @@ export const COURSES: Course[] = [
         description: 'Understand the CLR, Memory Management, and Garbage Collection extensively.',
         level: 'Advanced',
         stack: '.NET Core',
-        image: 'https://images.unsplash.com/photo-1629904853716-f004c3756858?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80',
         duration: '12 Weeks',
         topics: [
             {

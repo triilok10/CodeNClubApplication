@@ -137,6 +137,7 @@
 .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -162,22 +163,24 @@
     box-shadow: 0 10px 20px -5px rgba(124, 58, 237, 0.4);
 }
 
-/* Button Styles */
+/* Button Styles - Modern Soft */
 .btn-outline-violet {
-    border: 1px solid var(--violet);
+    background: rgba(124, 58, 237, 0.08);
+    border: 1px solid transparent;
     color: var(--violet);
     font-weight: 600;
     padding: 10px 16px;
     border-radius: 12px;
-    transition: all 0.2s;
+    transition: all 0.3s ease;
     margin-top: auto;
-    background: transparent;
 }
 
 .course-card:hover .btn-outline-violet {
     background: var(--violet);
     color: white;
-    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+    box-shadow: 0 8px 16px -4px rgba(124, 58, 237, 0.3);
+    border-color: transparent;
+    transform: translateY(-2px);
 }
 
 /* Animation */
