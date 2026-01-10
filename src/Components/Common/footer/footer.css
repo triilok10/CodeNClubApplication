@@ -96,4 +96,26 @@
 .creator-link:hover {
   transform: translateY(-2px) scale(1.05);
   text-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}/* Mobile Footer Adjustments */
+@media (max-width: 991px) {
+    .footer {
+        text-align: center;
+    }
+
+    .footer h5 {
+        justify-content: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-links a:hover {
+        padding-left: 0;
+    }
+
+    .footer-bottom-link {
+        display: block;
+        margin-bottom: 10px;
+    }
 }

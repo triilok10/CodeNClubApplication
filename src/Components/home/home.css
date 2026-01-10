@@ -1946,3 +1946,99 @@
         font-size: 5rem;
     }
 }
+
+/* --- Responsive Fixes (Mobile/Tablet) --- */
+@media (max-width: 991px) {
+
+    /* Developer Story Centering */
+    .story-content {
+        text-align: center;
+    }
+
+    .platform-badge {
+        margin: 0 auto 20px;
+    }
+
+    .story-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .trust-indicators {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Founder Section Centering */
+    .founder-content {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .badge-premium {
+        margin: 0 auto 16px;
+    }
+
+    .bio-text p {
+        text-align: center;
+    }
+
+    /* Pathways Hover Fix for Mobile - Forced Inline */
+    .roadmap-popup {
+        position: relative !important;
+        /* Changed from static to relative for z-index safety */
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        transform: none !important;
+        left: auto !important;
+        right: auto !important;
+        margin-top: 20px;
+        pointer-events: auto;
+        box-shadow: none;
+        background: rgba(30, 41, 59, 0.95);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 15px;
+    }
+
+    .roadmap-popup::before {
+        display: none !important;
+    }
+
+    .roadmap-card {
+        height: auto !important;
+        padding-bottom: 20px;
+        /* Ensure space */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .roadmap-card:hover .roadmap-popup {
+        transform: none !important;
+    }
+
+    /* Club Join Button Fix */
+    .input-group-club {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .input-group-club i {
+        display: none;
+        /* Hide icon to save space or adjust */
+    }
+
+    .input-group-club input {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .input-group-club button {
+        width: 100%;
+    }
+}
