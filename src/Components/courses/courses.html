@@ -16,25 +16,28 @@
     <!-- Filter Section -->
     <section class="container mb-5">
         <div class="filter-bar d-flex justify-content-center flex-wrap gap-2">
-            <button *ngFor="let filter of filters" class="btn btn-filter rounded-pill px-4"
-                [class.active]="activeFilter === filter" (click)="setFilter(filter)">
+            @for (filter of filters; track filter) {
+            <button class="btn btn-filter rounded-pill px-4" [class.active]="activeFilter === filter"
+                (click)="setFilter(filter)">
                 {{ filter }}
             </button>
+            }
         </div>
     </section>
 
     <!-- Course Grid -->
     <section class="container">
         <div class="row g-4">
-            <div class="col-md-6 col-lg-4 animate-fade-up" *ngFor="let course of filteredCourses">
+            @for (course of filteredCourses; track course.id) {
+            <div class="col-md-6 col-lg-4 animate-fade-up">
                 <div class="course-card h-100">
                     <div class="course-thumb">
                         <img [src]="course.image" [alt]="course.title" loading="lazy" />
-                        <span class="badge-level" [ngClass]="{
-                 'bg-success': course.level === 'Beginner',
-                 'bg-warning': course.level === 'Intermediate',
-                 'bg-danger': course.level === 'Advanced'
-               }">{{ course.level }}</span>
+                        <span class="badge-level" [class.bg-success]="course.level === 'Beginner'"
+                            [class.bg-warning]="course.level === 'Intermediate'"
+                            [class.bg-danger]="course.level === 'Advanced'">
+                            {{ course.level }}
+                        </span>
                     </div>
                     <div class="course-body">
                         <div class="d-flex justify-content-between align-items-center mb-2">
@@ -49,12 +52,14 @@
                     </div>
                 </div>
             </div>
+            }
         </div>
 
-        <!-- Empty State -->
-        <div *ngIf="filteredCourses.length === 0" class="text-center py-5">
+        @if (filteredCourses.length === 0) {
+        <div class="text-center py-5">
             <p class="text-muted">No courses found for this category yet.</p>
         </div>
+        }
     </section>
 
 </div>

@@ -79,12 +79,48 @@
             <i class="bi bi-microsoft text-violet"></i>
           </div>
           <h3>.NET 9 Core</h3>
-          <p>Memory manipulation, Span&lt;T&gt;, and high-performance JIT compilation internals.</p>
-          <div class="tech-tags">
-            <span>C# 12</span><span>AOT</span><span>Garbage Collection</span>
+          <p>Build high-performance applications with C# 12, memory-safe Span&lt;T&gt;, and cutting-edge JIT
+            compilation. Master async patterns, dependency injection, and minimal APIs for modern cloud-native
+            development.</p>
+
+          <!-- Key Features -->
+          <div class="key-features">
+            <div class="feature-item">
+              <i class="bi bi-lightning-charge-fill"></i>
+              <span>High Performance</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-shield-fill-check"></i>
+              <span>Type Safety</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-cloud-arrow-up-fill"></i>
+              <span>Cloud Ready</span>
+            </div>
           </div>
+
+          <!-- Learning Path -->
+          <div class="learning-path">
+            <div class="path-badge">🎯 What You'll Master</div>
+            <ul class="path-list">
+              <li>Entity Framework Core & LINQ</li>
+              <li>RESTful API Development</li>
+              <li>Microservices Architecture</li>
+            </ul>
+          </div>
+
+          <div class="tech-tags">
+            <span>C# 12</span><span>AOT</span><span>Minimal APIs</span>
+          </div>
+          <a routerLink="/courses/dotnet" class="study-link">
+            <i class="bi bi-book"></i> Study .NET
+          </a>
         </div>
-        <div class="card-visual visual-net"></div>
+        <div class="card-visual-pattern dotnet-pattern"></div>
+        <div class="card-decoration">
+          <div class="decoration-circle circle-1"></div>
+          <div class="decoration-circle circle-2"></div>
+        </div>
       </div>
 
       <!-- Item: Azure -->
@@ -94,7 +130,31 @@
             <i class="bi bi-cloud-fill text-azure"></i>
           </div>
           <h3>Azure Cloud</h3>
-          <p>Serverless architecture and Event Mesh patterns.</p>
+          <p>Master serverless architecture, Event Mesh patterns, and cloud-native solutions for scalable applications.
+          </p>
+
+          <!-- Key Features -->
+          <div class="key-features">
+            <div class="feature-item">
+              <i class="bi bi-infinity"></i>
+              <span>Serverless</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-diagram-3-fill"></i>
+              <span>Event Driven</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-globe"></i>
+              <span>Global Scale</span>
+            </div>
+          </div>
+
+          <div class="tech-tags">
+            <span>Functions</span><span>Service Bus</span>
+          </div>
+          <a routerLink="/courses/azure" class="study-link">
+            <i class="bi bi-book"></i> Study Azure
+          </a>
         </div>
       </div>
 
@@ -105,24 +165,331 @@
             <i class="bi bi-box-seam-fill text-white"></i>
           </div>
           <h3>Kubernetes</h3>
-          <p>Orchestration at scale. Helm, Istio, and GitOps.</p>
+          <p>Learn container orchestration at scale with Helm charts, Istio service mesh, and GitOps deployment
+            strategies.</p>
+
+          <!-- Key Features -->
+          <div class="key-features">
+            <div class="feature-item">
+              <i class="bi bi-boxes"></i>
+              <span>Orchestration</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-arrow-repeat"></i>
+              <span>Auto Scaling</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-heart-pulse-fill"></i>
+              <span>Self Healing</span>
+            </div>
+          </div>
+
+          <div class="tech-tags">
+            <span>Pods</span><span>Deployments</span>
+          </div>
+          <a routerLink="/courses/kubernetes" class="study-link">
+            <i class="bi bi-book"></i> Study K8s
+          </a>
         </div>
       </div>
 
-      <!-- Item: Frontend -->
-      <div class="bento-card bento-wide">
-        <div class="card-content d-flex align-items-center justify-content-between">
-          <div>
-            <div class="icon-wrapper bg-danger-soft mb-3">
-              <i class="bi bi-filetype-ts text-danger"></i>
-            </div>
-            <h3>Angular & TypeScript</h3>
-            <p class="mb-0">Enterprise-grade frontend architecture.</p>
+      <!-- Angular -->
+      <div class="bento-card bento-md">
+        <div class="card-content">
+          <div class="icon-wrapper bg-angular-soft">
+            <i class="bi bi-code-slash text-angular"></i>
           </div>
-          <div class="visual-frontend">
-            <!-- CSS Mockup elements could go here -->
-            <div class="code-snippet-mini">
-              <span class="c-p">@Component</span>(&#123;...&#125;)
+          <h3>Angular</h3>
+          <p>Build enterprise-grade SPAs with TypeScript, powerful CLI, RxJS reactive programming, and robust component
+            architecture.</p>
+
+          <!-- Key Features -->
+          <div class="key-features">
+            <div class="feature-item">
+              <i class="bi bi-code-square"></i>
+              <span>TypeScript</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-arrow-left-right"></i>
+              <span>Two-Way Binding</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-plugin"></i>
+              <span>DI Pattern</span>
+            </div>
+          </div>
+
+          <div class="tech-tags">
+            <span>Components</span><span>RxJS</span>
+          </div>
+          <a routerLink="/courses/angular" class="study-link">
+            <i class="bi bi-book"></i> Study Angular
+          </a>
+        </div>
+      </div>
+
+      <!-- React -->
+      <div class="bento-card bento-md">
+        <div class="card-content">
+          <div class="icon-wrapper bg-react-soft">
+            <i class="bi bi-filetype-jsx text-react"></i>
+          </div>
+          <h3>React</h3>
+          <p>Master component-based UI development with hooks, virtual DOM optimization, and modern state management
+            patterns.</p>
+
+          <!-- Key Features -->
+          <div class="key-features">
+            <div class="feature-item">
+              <i class="bi bi-layers-fill"></i>
+              <span>Virtual DOM</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-bezier2"></i>
+              <span>Hooks</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-puzzle-fill"></i>
+              <span>Component Based</span>
+            </div>
+          </div>
+
+          <div class="tech-tags">
+            <span>Hooks</span><span>JSX</span>
+          </div>
+          <a routerLink="/courses/react" class="study-link">
+            <i class="bi bi-book"></i> Study React
+          </a>
+        </div>
+      </div>
+
+      <!-- Git -->
+      <div class="bento-card bento-md">
+        <div class="card-content">
+          <div class="icon-wrapper bg-git-soft">
+            <i class="bi bi-git text-git"></i>
+          </div>
+          <h3>Git & GitHub</h3>
+          <p>Master version control with advanced branching strategies, collaborative workflows, and CI/CD automation
+            using GitHub Actions.</p>
+
+          <!-- Key Features -->
+          <div class="key-features">
+            <div class="feature-item">
+              <i class="bi bi-diagram-2-fill"></i>
+              <span>Branching</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-people-fill"></i>
+              <span>Collaboration</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-clock-history"></i>
+              <span>Version Control</span>
+            </div>
+          </div>
+
+          <div class="tech-tags">
+            <span>GitFlow</span><span>Actions</span>
+          </div>
+          <a routerLink="/courses/git" class="study-link">
+            <i class="bi bi-book"></i> Study Git
+          </a>
+        </div>
+      </div>
+
+      <!-- Docker -->
+      <div class="bento-card bento-md">
+        <div class="card-content">
+          <div class="icon-wrapper bg-docker-soft">
+            <i class="bi bi-box text-docker"></i>
+          </div>
+          <h3>Docker</h3>
+          <p>Learn containerization for consistent deployment across all environments with multi-stage builds and Docker
+            Compose orchestration.</p>
+
+          <!-- Key Features -->
+          <div class="key-features">
+            <div class="feature-item">
+              <i class="bi bi-box-seam"></i>
+              <span>Containerization</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-stack"></i>
+              <span>Lightweight</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-arrow-repeat"></i>
+              <span>Portable</span>
+            </div>
+          </div>
+
+          <div class="tech-tags">
+            <span>Images</span><span>Compose</span>
+          </div>
+          <a routerLink="/courses/docker" class="study-link">
+            <i class="bi bi-book"></i> Study Docker
+          </a>
+        </div>
+      </div>
+
+      <!-- SQL Server -->
+      <div class="bento-card bento-md">
+        <div class="card-content">
+          <div class="icon-wrapper bg-sql-soft">
+            <i class="bi bi-database-fill text-sql"></i>
+          </div>
+          <h3>SQL Server</h3>
+          <p>Deep dive into relational database design, advanced indexing strategies, query optimization, and T-SQL
+            programming for high-performance data solutions.</p>
+
+          <!-- Key Features -->
+          <div class="key-features">
+            <div class="feature-item">
+              <i class="bi bi-table"></i>
+              <span>ACID Compliant</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-speedometer2"></i>
+              <span>Query Optimization</span>
+            </div>
+            <div class="feature-item">
+              <i class="bi bi-shield-lock-fill"></i>
+              <span>Data Security</span>
+            </div>
+          </div>
+
+          <div class="tech-tags">
+            <span>T-SQL</span><span>Indexes</span>
+          </div>
+          <a routerLink="/courses/sql" class="study-link">
+            <i class="bi bi-book"></i> Study SQL
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Developer's Story Section -->
+<section class="developer-story-section py-5 position-relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="story-bg-elements">
+    <div class="code-pattern"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+  </div>
+
+  <div class="container py-5 position-relative z-2">
+    <div class="row align-items-center g-5">
+      <!-- Left: Content -->
+      <div class="col-lg-6">
+        <div class="story-content">
+          <div class="platform-badge">
+            <i class="bi bi-cup-hot-fill"></i>
+            <span>Caffeine.dev</span>
+          </div>
+
+          <h2 class="display-4 fw-bold mb-4">
+            The <span class="text-gradient">Developer's</span> Story
+          </h2>
+
+          <p class="lead mb-4">
+            A platform <strong>designed by developers, for developers</strong>. We understand your journey because we've
+            walked it ourselves.
+          </p>
+
+          <div class="story-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <div class="highlight-content">
+                <h5>Built with Real Experience</h5>
+                <p>Every course, every tutorial, every line of code comes from battle-tested production experience.</p>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <div class="highlight-icon">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <div class="highlight-content">
+                <h5>Community-Driven Learning</h5>
+                <p>Join thousands of developers who learn, share, and grow together in our vibrant community.</p>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <div class="highlight-icon">
+                <i class="bi bi-rocket-takeoff-fill"></i>
+              </div>
+              <div class="highlight-content">
+                <h5>Career Acceleration</h5>
+                <p>From junior to senior, we provide the exact skills and knowledge you need to level up.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-cta mt-5">
+            <a href="#" class="btn-primary-custom">
+              <span>Start Your Journey</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+            <div class="trust-indicators">
+              <div class="indicator">
+                <strong>10,000+</strong>
+                <span>Active Learners</span>
+              </div>
+              <div class="indicator">
+                <strong>500+</strong>
+                <span>Hours of Content</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Visual -->
+      <div class="col-lg-6">
+        <div class="story-visual">
+          <div class="code-editor-mockup">
+            <div class="editor-header">
+              <div class="editor-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="editor-title">developer_journey.ts</div>
+            </div>
+            <div class="editor-content">
+              <pre><code><span class="keyword">const</span> <span class="variable">journey</span> = {{ '{' }}
+  <span class="property">platform</span>: <span class="string">"Caffeine.dev"</span>,
+  <span class="property">mission</span>: <span class="string">"Empower developers"</span>,
+  <span class="property">approach</span>: [
+    <span class="string">"Real-world projects"</span>,
+    <span class="string">"Industry best practices"</span>,
+    <span class="string">"Hands-on learning"</span>
+  ],
+  <span class="property">community</span>: <span class="number">10000</span>+,
+  <span class="property">success</span>: <span class="boolean">true</span>
+{{ '}' }};</code></pre>
+            </div>
+          </div>
+
+          <!-- Floating Stats -->
+          <div class="floating-stat stat-1">
+            <i class="bi bi-trophy-fill"></i>
+            <div>
+              <strong>95%</strong>
+              <span>Success Rate</span>
+            </div>
+          </div>
+          <div class="floating-stat stat-2">
+            <i class="bi bi-star-fill"></i>
+            <div>
+              <strong>4.9/5</strong>
+              <span>Avg Rating</span>
             </div>
           </div>
         </div>
@@ -130,6 +497,7 @@
     </div>
   </div>
 </section>
+
 <!-- NEW: Terminal Mode Git Section -->
 <section class="git-terminal-section py-5 position-relative overflow-hidden">
   <div class="grid-overlay"></div>
@@ -268,49 +636,16 @@
 </section>
 
 <!-- NEW developers story section -->
-<section class="developer-story-section py-5">
-  <div class="container py-5">
-    <div class="row align-items-center mb-5">
-      <div class="col-lg-6">
-        <div class="d-flex align-items-center gap-2 mb-3">
-          <span class="badge bg-violet-soft text-violet rounded-pill border border-violet-subtle px-3 py-2 fw-bold">OUR
-            MISSION</span>
-        </div>
-        <h2 class="display-4 fw-bold mb-4">The <span class="text-violet">Developer's</span> Story</h2>
-        <p class="lead text-secondary mb-4" style="line-height: 1.8;">
-          Code N Club isn't just about tutorials. It's about the relentless pursuit of engineering excellence. We
-          believe every line of code tells a story of problem-solving, creativity, and impact.
-        </p>
 
-        <div class="d-flex gap-5 mt-5 border-top pt-4">
-          <div>
-            <h3 class="fw-bold mb-0">10k+</h3>
-            <p class="text-muted small">Active Learners</p>
-          </div>
-          <div>
-            <h3 class="fw-bold mb-0">500+</h3>
-            <p class="text-muted small">Projects Shipped</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-5 offset-lg-1 text-center">
-        <!-- Geometric/Abstract graphic placeholder style -->
-        <div class="position-relative p-5 rounded-circle bg-light-soft d-inline-block">
-          <div class="position-absolute top-50 start-50 translate-middle"
-            style="width: 300px; height: 300px; background: radial-gradient(rgba(124,58,237,0.1), transparent 70%);">
-          </div>
-          <i class="bi bi-quote text-violet opacity-25" style="font-size: 8rem;"></i>
-        </div>
-        <div class="mt-4">
-          <button class="btn btn-violet-solid px-5 py-3 rounded-pill shadow-lg">Join Our Community</button>
-        </div>
-      </div>
-    </div>
+<section class="roadmap-section py-5 bg-white position-relative overflow-hidden">
+  <!-- Graphical Background Elements -->
+  <div class="roadmap-bg-decor">
+    <div class="ambient-glow-top"></div>
+    <div class="ambient-glow-bottom"></div>
+    <div class="grid-pattern"></div>
   </div>
-</section>
 
-<section class="roadmap-section py-5 bg-white overflow-hidden">
-  <div class="container py-5">
+  <div class="container py-5 position-relative z-2">
     <div class="text-center mb-5">
       <h2 class="display-5 fw-bold mb-3">Engineering <span class="text-violet">Pathways</span></h2>
       <p class="text-muted lead">The definitive roadmap from Hello World to Senior Architect.</p>
@@ -405,6 +740,99 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+
+<!-- NEW: Meet Our Founder Section -->
+<section class="founder-section py-5 position-relative overflow-hidden bg-light">
+  <div class="circles-bg">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </div>
+
+  <div class="container py-5 position-relative z-2">
+    <div class="row align-items-center g-5">
+      <!-- Founder Image Carousel -->
+      <div class="col-lg-5 order-lg-2">
+        <div class="founder-image-container shadow-2xl">
+          <div class="image-wrapper">
+            @for (img of founderImages; track $index) {
+            <img [src]="img" [class.active]="currentImageIndex === $index" class="founder-img" alt="Trilok Chand Swami">
+            }
+          </div>
+          <div class="carousel-indicators-custom">
+            @for (img of founderImages; track $index) {
+            <span [class.active]="currentImageIndex === $index" (click)="setCurrentImage($index)"
+              class="indicator-dot"></span>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Founder Bio -->
+      <div class="col-lg-7 order-lg-1">
+        <div class="founder-content">
+          <span class="badge-premium mb-3">Meet Our Founder</span>
+          <h2 class="display-4 fw-bold mb-4 text-dark">Trilok Chand <span class="text-violet">Swami</span></h2>
+
+          <div class="bio-text">
+            <h5 class="text-violet fw-bold mb-3">Engineering the Future of Scale.</h5>
+            <p class="lead mb-4" style="font-size: 1.15rem; color: #334155;">
+              I am <strong>Trilok Chand Swami</strong>—a Software Architect driven by the challenge of bridging complex
+              problems with elegant, cloud-native solutions.
+            </p>
+
+            <p class="mb-4 text-secondary" style="line-height: 1.8;">
+              With deep-rooted expertise in <strong>.NET Core, Angular, and Azure</strong>, I don't just build
+              applications; I craft resilient digital ecosystems designed for peak performance and infinite scalability.
+              My mission is to transform intricate requirements into secure, high-impact systems that stand the test of
+              time.
+            </p>
+
+            <div class="expertise-grid mb-4">
+              <div class="expertise-item">
+                <i class="bi bi-cloud-check text-violet"></i>
+                <span>Cloud Architecture</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-shield-check text-azure"></i>
+                <span>Secure Systems</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-speedometer2 text-violet"></i>
+                <span>Performance Tuning</span>
+              </div>
+              <div class="expertise-item">
+                <i class="bi bi-gear-wide-connected text-azure"></i>
+                <span>DevOps & CI/CD</span>
+              </div>
+            </div>
+            <div class="mt-5">
+              <h6 class="text-azure fw-bold text-center mb-3">Connect & Professional Network</h6>
+              <div class="founder-social-grid">
+                <a href="#" class="social-link yt" title="YouTube">
+                  <i class="bi bi-youtube"></i>
+                  <span>YouTube</span>
+                </a>
+                <a href="#" class="social-link li" title="LinkedIn">
+                  <i class="bi bi-linkedin"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="#" class="social-link gh" title="GitHub">
+                  <i class="bi bi-github"></i>
+                  <span>GitHub</span>
+                </a>
+                <a href="#" class="social-link wa" title="Direct Chat">
+                  <i class="bi bi-whatsapp"></i>
+                  <span>Direct Chat</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -61,8 +61,11 @@
                 </div>
 
                 <button type="submit" class="btn-auth" [disabled]="!loginForm.form.valid || isSubmitting">
-                    <span *ngIf="!isSubmitting">Sign In <i class="bi bi-arrow-right"></i></span>
-                    <span *ngIf="isSubmitting"><i class="bi bi-arrow-repeat spin"></i> Signing in...</span>
+                    @if (!isSubmitting) {
+                    <span>Sign In <i class="bi bi-arrow-right"></i></span>
+                    } @else {
+                    <span><i class="bi bi-arrow-repeat spin"></i> Signing in...</span>
+                    }
                 </button>
 
                 <div class="divider">

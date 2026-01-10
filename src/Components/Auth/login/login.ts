@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AuthHeader } from '../auth-header/auth-header';
@@ -7,7 +6,7 @@ import { AuthHeader } from '../auth-header/auth-header';
 @Component({
     selector: 'app-login',
     standalone: true,
-    imports: [CommonModule, FormsModule, RouterModule, AuthHeader],
+    imports: [FormsModule, RouterModule, AuthHeader],
     templateUrl: './login.html',
     styleUrl: './login.css',
 })

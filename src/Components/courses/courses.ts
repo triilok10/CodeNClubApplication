@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // For ngFor, etc.
 import { Header } from '../Common/header/header';
 import { Footer } from '../Common/footer/footer';
 
@@ -16,7 +15,7 @@ interface Course {
 @Component({
     selector: 'app-courses',
     standalone: true,
-    imports: [CommonModule, Header, Footer],
+    imports: [Header, Footer],
     templateUrl: './courses.html',
     styleUrl: './courses.css'
 })

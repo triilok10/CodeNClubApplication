@@ -65,8 +65,11 @@
                 </div>
 
                 <button type="submit" class="btn-auth" [disabled]="!signupForm.form.valid || isSubmitting">
-                    <span *ngIf="!isSubmitting">Create Account <i class="bi bi-arrow-right"></i></span>
-                    <span *ngIf="isSubmitting"><i class="bi bi-arrow-repeat spin"></i> Creating account...</span>
+                    @if (!isSubmitting) {
+                    <span>Create Account <i class="bi bi-arrow-right"></i></span>
+                    } @else {
+                    <span><i class="bi bi-arrow-repeat spin"></i> Creating account...</span>
+                    }
                 </button>
 
                 <div class="divider">
