@@ -1,0 +1,120 @@
+<app-header></app-header>
+
+@if(project) {
+<div class="project-detail-page bg-light-soft min-vh-100 pb-5">
+
+    <!-- Hero Header -->
+    <section class="project-hero bg-white border-bottom pt-5 pb-5">
+        <div class="container pt-4">
+            <a routerLink="/projects"
+                class="d-inline-flex align-items-center text-decoration-none text-muted mb-4 hover-violet transition">
+                <i class="bi bi-arrow-left me-2"></i> Back to Projects
+            </a>
+
+            <div class="row align-items-center">
+                <div class="col-lg-7 order-2 order-lg-1">
+                    <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+                        <span class="badge px-3 py-2 rounded-pill fw-bold text-white shadow-sm"
+                            [class.bg-success]="project.difficulty === 'Beginner'"
+                            [class.bg-warning]="project.difficulty === 'Intermediate'"
+                            [class.bg-danger]="project.difficulty === 'Advanced'">
+                            {{ project.difficulty }}
+                        </span>
+                        <span
+                            class="text-secondary fw-medium d-flex align-items-center bg-light px-3 py-1 rounded-pill border">
+                            <i class="bi bi-people-fill text-violet me-2"></i> {{ project.team }}
+                        </span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-3">{{ project.title }}</h1>
+                    <p class="lead text-muted mb-4">{{ project.description }}</p>
+
+                    <div class="d-flex gap-3 flex-wrap alignItemCenter">
+                        <button class="btn btn-outline-dark px-4 py-2 rounded-pill fw-bold" (click)="shareProject()">
+                            <i class="bi bi-share-fill me-2"></i> Share
+                        </button>
+                        <button class="btn btn-violet-solid px-4 py-2 rounded-pill shadow-sm">
+                            <i class="bi bi-github me-2"></i> View Code
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 mb-4 mb-lg-0 order-1 order-lg-2">
+                    <div class="hero-image-wrapper position-relative">
+                        <div class="glow-bg-small d-none d-lg-block"></div>
+                        <img [src]="project.image"
+                            class="img-fluid rounded-4 shadow-lg border position-relative z-2 w-100 object-fit-cover"
+                            style="max-height: 350px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="container py-5">
+        <div class="row g-5">
+            <!-- Left Column: Gallery & Description -->
+            <div class="col-lg-8">
+
+                <!-- Gallery (Additional Images) -->
+                @if(project.gallery && project.gallery.length > 0) {
+                <div class="gallery-wrapper mb-5">
+                    <div class="row g-3">
+                        @for(img of project.gallery; track img) {
+                        <div class="col-md-6">
+                            <img [src]="img" class="img-fluid rounded-4 w-100 shadow-sm border object-fit-cover"
+                                style="height: 250px;">
+                        </div>
+                        }
+                    </div>
+                </div>
+                }
+
+                <!-- About -->
+                <div class="project-about bg-white p-4 p-md-5 rounded-4 border shadow-sm">
+                    <h3 class="fw-bold mb-4">About the Project</h3>
+                    <div class="rich-text content-typography"
+                        [innerHTML]="project.longDescription || project.description"></div>
+                </div>
+            </div>
+
+            <!-- Right Column: Tech & CTA -->
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 100px; z-index: 10;">
+
+                    <!-- Tech Stack -->
+                    <div class="bg-white p-4 rounded-4 border shadow-sm mb-4">
+                        <h5 class="fw-bold mb-3">Technologies</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            @for(tag of project.tags; track tag) {
+                            <span class="badge bg-light text-secondary border px-3 py-2 fw-normal">{{ tag }}</span>
+                            }
+                        </div>
+                    </div>
+
+                    <!-- Team Card -->
+                    <div
+                        class="team-card bg-violet text-white p-4 rounded-4 shadow-lg position-relative overflow-hidden">
+                        <div class="position-relative z-2">
+                            <h5 class="fw-bold mb-2">Build with Us</h5>
+                            <p class="small text-white-50 mb-4">
+                                The <strong>{{ project.team }}</strong> is looking for contributors. Fork the repo and
+                                submit a PR!
+                            </p>
+                            <button class="btn btn-white text-violet w-100 fw-bold py-2 rounded-pill">
+                                Contributing Guidelines
+                            </button>
+                        </div>
+                        <!-- Decorative Shapes -->
+                        <div class="circle-1"></div>
+                        <div class="circle-2"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+}
+<app-footer></app-footer>

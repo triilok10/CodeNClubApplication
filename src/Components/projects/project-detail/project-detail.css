@@ -1,0 +1,158 @@
+/* Hover Utilities */
+.hover-violet:hover {
+  color: var(--violet) !important;
+}
+
+.transition {
+  transition: all 0.3s ease;
+}
+
+/* Gallery */
+.gallery-wrapper img {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-wrapper img:hover {
+  transform: scale(1.02);
+}
+
+/* Typography for Dynamic Content */
+.content-typography p {
+  line-height: 1.8;
+  color: #475569;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.content-typography h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.content-typography ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.content-typography li {
+  margin-bottom: 0.5rem;
+  color: #475569;
+}
+
+/* Team Card Decorations */
+.team-card {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+}
+
+.team-card .circle-1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: -50px;
+  right: -50px;
+}
+
+.team-card .circle-2 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  bottom: -30px;
+  left: -30px;
+}
+
+.btn-white {
+  background: white;
+  color: var(--violet);
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn-white:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Image */
+.hero-image-wrapper img {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+  transform: rotate(2deg);
+  transition: all 0.5s ease;
+}
+
+.hero-image-wrapper:hover img {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.glow-bg-small {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+  top: -20%;
+  left: -20%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .project-hero {
+    text-align: center;
+  }
+
+  .project-hero .row {
+    flex-direction: column;
+  }
+
+  .project-hero .justify-content-bf-end {
+    justify-content: center !important;
+  }
+
+  .d-flex.justify-content-lg-end {
+    justify-content: center;
+  }
+
+  .sticky-top {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  /* Override alignment for centered hero */
+  .d-flex.align-items-center {
+    justify-content: center;
+  }
+
+  .project-hero .justify-content-lg-end {
+    justify-content: center !important;
+  }
+
+  .d-flex.justify-content-lg-end {
+    justify-content: center;
+  }
+
+  .sticky-top {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  /* Ensure image fits */
+  .hero-image-wrapper img {
+    transform: rotate(0deg);
+    /* No rotation on mobile to save space */
+    max-height: 300px;
+    margin-bottom: 2rem;
+  }
+
+  .alignItemCenter {
+    justify-content: center !important;
+  }
+}

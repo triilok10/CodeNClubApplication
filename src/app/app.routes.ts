@@ -15,6 +15,7 @@ import { Login } from '../Components/Auth/login/login';
 import { GetStarted } from '../Components/Auth/get-started/get-started';
 
 import { Learning } from '../Components/learning/learning';
+import { ProjectDetail } from '../Components/projects/project-detail/project-detail';
 
 export const routes: Routes = [
   {
@@ -40,6 +41,10 @@ export const routes: Routes = [
   {
     path: 'projects',
     component: Projects,
+  },
+  {
+    path: 'projects/:id',
+    component: ProjectDetail,
   },
   {
     path: 'events',

@@ -1,33 +1,76 @@
 <app-header></app-header>
 
-<div class="page-wrapper bg-light min-vh-100 pb-5">
-    <section class="container pt-5 mt-5">
-        <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold">Built by the <span class="text-violet">Community</span></h2>
-            <p class="text-muted">Open source projects you can contribute to right now.</p>
+<div class="projects-page min-vh-100 pb-5">
+    <!-- Hero Section -->
+    <section class="projects-hero text-center pt-5 pb-5 position-relative overflow-hidden">
+        <div class="glow-bg"></div>
+        <div class="container position-relative z-2 mt-5">
+            <span class="badge bg-violet-soft text-violet mb-3 px-3 py-2 rounded-pill fw-bold">Community Source</span>
+            <h1 class="display-4 fw-bold mb-3">Build <span class="text-violet">Real World</span> Software</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 600px;">
+                Clone, break, and rebuild production-grade architectures. <br class="d-none d-md-block">
+                From Microservices to Monoliths.
+            </p>
         </div>
+    </section>
 
+    <!-- Filters -->
+    <section class="container mb-5">
+        <div class="filter-bar d-flex justify-content-center flex-wrap gap-2">
+            @for (filter of filters; track filter) {
+            <button class="btn btn-filter rounded-pill px-4" [class.active]="activeFilter === filter"
+                (click)="setFilter(filter)">
+                {{ filter }}
+            </button>
+            }
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="container">
         <div class="row g-4">
-            <div class="col-md-4" *ngFor="let p of projects">
-                <div class="project-card bg-white rounded-4 overflow-hidden shadow-sm h-100 border">
-                    <div class="project-img position-relative" style="height: 200px;">
-                        <img [src]="p.image" class="w-100 h-100 object-fit-cover" [alt]="p.title">
+            @for (project of filteredProjects; track project.id) {
+            <div class="col-lg-4 col-md-6 animate-fade-up">
+                <div class="project-card cubic-card h-100 d-flex flex-column bg-white">
+                    <!-- Image -->
+                    <div class="project-thumb position-relative overflow-hidden" style="cursor: pointer;"
+                        [routerLink]="['/projects', project.id]">
+                        <img [src]="project.image" [alt]="project.title" loading="lazy"
+                            class="w-100 h-100 object-fit-cover">
+                        <span class="badge-difficulty position-absolute top-0 end-0 m-3"
+                            [class.bg-success]="project.difficulty === 'Beginner'"
+                            [class.bg-warning]="project.difficulty === 'Intermediate'"
+                            [class.bg-danger]="project.difficulty === 'Advanced'">
+                            {{ project.difficulty }}
+                        </span>
                     </div>
-                    <div class="p-4">
-                        <div class="d-flex gap-2 mb-3">
-                            <span class="badge bg-light text-dark border" *ngFor="let t of p.tags">{{t}}</span>
+
+                    <!-- Content -->
+                    <div class="project-body p-4 flex-grow-1 d-flex flex-column">
+                        <div class="d-flex gap-2 mb-3 flex-wrap">
+                            @for(tag of project.tags; track tag) {
+                            <span class="badge bg-light text-secondary border fw-normal">{{ tag }}</span>
+                            }
                         </div>
-                        <h4 class="fw-bold">{{p.title}}</h4>
-                        <p class="text-muted small">{{p.desc}}</p>
-                        <div class="d-flex gap-2 mt-4">
-                            <button class="btn btn-sm btn-dark flex-grow-1"><i class="bi bi-github me-1"></i>
-                                Code</button>
-                            <button class="btn btn-sm btn-outline-dark flex-grow-1"><i class="bi bi-window me-1"></i>
-                                Demo</button>
+
+                        <h4 class="fw-bold mb-2">{{ project.title }}</h4>
+                        <p class="text-muted small mb-4 line-clamp-3">{{ project.description }}</p>
+
+                        <!-- Footer -->
+                        <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center text-warning small fw-bold">
+                                <i class="bi bi-star-fill me-1"></i> {{ project.stars }}
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-soft rounded-pill px-3">Demo</button>
+                                <button class="btn btn-sm btn-violet-soft rounded-pill px-3 fw-bold"
+                                    [routerLink]="['/projects', project.id]">View Project</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            }
         </div>
     </section>
 </div>
