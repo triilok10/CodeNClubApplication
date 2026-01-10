@@ -1,0 +1,171 @@
+.learning-container {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+.learning-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.topic-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* Scrollbar styling */
+.topic-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.topic-list::-webkit-scrollbar-thumb {
+    background-color: #e2e8f0;
+    border-radius: 4px;
+}
+
+.topic-item {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.topic-item:hover {
+    background-color: #f8fafc;
+    transform: translateX(4px);
+}
+
+.topic-item.active {
+    background-color: rgba(124, 58, 237, 0.05);
+    /* Violet soft */
+    color: var(--violet);
+    border-color: rgba(124, 58, 237, 0.1);
+    font-weight: 600;
+}
+
+.topic-item.active i {
+    color: var(--violet);
+}
+
+.content-scrollable {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.topic-body {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #334155;
+}
+
+.topic-body h3 {
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    font-size: 1.5rem;
+}
+
+.topic-body h4 {
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+    font-size: 1.25rem;
+}
+
+.topic-body p {
+    margin-bottom: 1.5rem;
+}
+
+.topic-body code {
+    background: #f1f5f9;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #ec4899;
+    /* Pinkish for code */
+    font-family: 'Consolas', monospace;
+    font-size: 0.9em;
+}
+
+.topic-body pre {
+    background: #1e293b;
+    color: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+}
+
+.topic-body pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+}
+
+/* Share Modal Buttons */
+.btn-social {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #eef2f6;
+}
+
+.btn-social:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border-color: currentColor;
+}
+
+.btn-linkedin {
+    color: #0077b5;
+    background: white;
+}
+
+.btn-whatsapp {
+    color: #25d366;
+    background: white;
+}
+
+.btn-twitter {
+    color: #000000;
+    background: white;
+}
+
+/* Responsive Layout */
+@media (max-width: 991px) {
+    .learning-container {
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
+    }
+
+    .learning-sidebar {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .topic-list {
+        max-height: 250px;
+    }
+
+    .content-scrollable {
+        height: auto;
+        overflow: visible;
+    }
+
+    .content-wrapper {
+        padding: 1.5rem !important;
+    }
+}

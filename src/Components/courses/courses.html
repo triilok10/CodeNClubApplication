@@ -2,6 +2,63 @@
 
 <div class="courses-page bg-light-soft min-vh-100 pb-5">
 
+    @if (selectedCourse) {
+    <!-- Course Detail View -->
+    <section class="course-detail-hero position-relative pt-5 pb-5">
+        <div class="glow-detail"></div>
+        <div class="container position-relative z-2 mt-5">
+            <button (click)="goBack()" class="btn btn-sm btn-outline-secondary mb-4">
+                <i class="bi bi-arrow-left"></i> Back to Courses
+            </button>
+            <div class="row align-items-center">
+                <div class="col-lg-6 animate-fade-up">
+                    <span class="badge-level bg-violet mb-3 d-inline-block">{{ selectedCourse.level }}</span>
+                    <h1 class="display-4 fw-bold mb-3">{{ selectedCourse.title }}</h1>
+                    <p class="lead text-muted mb-4">{{ selectedCourse.description }}</p>
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-violet-solid px-4 py-2"
+                            [routerLink]="['/learning', selectedCourse.id]">Start Learning</button>
+                        <button class="btn btn-outline-dark px-4 py-2"><i class="bi bi-github"></i> View Code</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0 animate-fade-up" style="animation-delay: 0.2s;">
+                    <img [src]="selectedCourse.image" class="img-fluid rounded-4 shadow-lg" alt="Course Detail">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <div class="row g-4">
+            <div class="col-md-8">
+                <h3 class="fw-bold mb-4">Mastering the Concepts</h3>
+                <div class="bg-white p-4 rounded-4 border">
+                    <p>In this comprehensive module, we will dive deep into <strong>{{ selectedCourse.stack }}</strong>
+                        fundamentals and advanced patterns.</p>
+                    <ul>
+                        <li>Architecture & Best Practices</li>
+                        <li>Performance Optimization</li>
+                        <li>Real-world Case Studies</li>
+                        <li>Production Deployment</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bg-white p-4 rounded-4 border">
+                    <h5 class="fw-bold mb-3">Course Specs</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="bi bi-clock me-2"></i> {{ selectedCourse.duration }}</li>
+                        <li class="mb-2"><i class="bi bi-bar-chart me-2"></i> {{ selectedCourse.level }}</li>
+                        <li class="mb-2"><i class="bi bi-layers me-2"></i> {{ selectedCourse.stack }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    } @else {
+    <!-- List View -->
+
     <!-- Hero Section -->
     <section class="courses-hero pt-5 pb-5 text-center position-relative overflow-hidden">
         <div class="glow-bg"></div>
@@ -30,7 +87,7 @@
         <div class="row g-4">
             @for (course of filteredCourses; track course.id) {
             <div class="col-md-6 col-lg-4 animate-fade-up">
-                <div class="course-card h-100">
+                <div class="course-card cubic-card h-100" [routerLink]="['/courses', course.id]">
                     <div class="course-thumb">
                         <img [src]="course.image" [alt]="course.title" loading="lazy" />
                         <span class="badge-level" [class.bg-success]="course.level === 'Beginner'"
@@ -61,6 +118,7 @@
         </div>
         }
     </section>
+    }
 
 </div>
 

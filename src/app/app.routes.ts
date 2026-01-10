@@ -14,6 +14,8 @@ import { Careers } from '../Components/careers/careers';
 import { Login } from '../Components/Auth/login/login';
 import { GetStarted } from '../Components/Auth/get-started/get-started';
 
+import { Learning } from '../Components/learning/learning';
+
 export const routes: Routes = [
   {
     path: '',
@@ -22,6 +24,14 @@ export const routes: Routes = [
   {
     path: 'courses',
     component: Courses,
+  },
+  {
+    path: 'courses/:id',
+    component: Courses,
+  },
+  {
+    path: 'learning/:id',
+    component: Learning,
   },
   {
     path: 'community',

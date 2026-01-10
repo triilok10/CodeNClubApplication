@@ -1,0 +1,92 @@
+<div class="learning-container d-flex min-vh-100">
+    <!-- Sidebar -->
+    <aside class="learning-sidebar bg-white border-end shadow-sm">
+        <div class="sidebar-header p-4 border-bottom">
+            <button [routerLink]="['/courses', course?.id]" class="btn btn-sm btn-outline-secondary mb-3">
+                <i class="bi bi-arrow-left"></i> Back to Overview
+            </button>
+            <h5 class="fw-bold text-dark">{{ course?.title }}</h5>
+            <p class="small text-muted mb-0">{{ topics.length }} Topics</p>
+        </div>
+        <div class="topic-list p-3 overflow-auto">
+            @for(topic of topics; track topic.title) {
+            <div class="topic-item p-3 rounded mb-2 d-flex align-items-center" [class.active]="selectedTopic === topic"
+                (click)="selectTopic(topic)">
+                <i class="bi bi-book-half me-3 text-muted" [class.text-violet]="selectedTopic === topic"></i>
+                <span class="small fw-medium">{{ topic.title }}</span>
+            </div>
+            }
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="learning-content flex-grow-1 bg-light-soft position-relative">
+        <div class="content-scrollable p-4 p-md-5">
+            @if(selectedTopic) {
+            <div class="content-wrapper bg-white p-5 rounded-4 shadow-sm mx-auto" style="max-width: 900px;">
+                <span class="badge bg-violet-soft text-violet mb-3">Lesson</span>
+                <h2 class="mb-4 fw-bold text-dark">{{ selectedTopic.title }}</h2>
+
+                @if(selectedTopic.image) {
+                <img [src]="selectedTopic.image" class="img-fluid w-100 rounded-4 mb-4 shadow-sm"
+                    [alt]="selectedTopic.title" style="max-height: 400px; object-fit: cover;">
+                }
+
+                <div class="topic-body text-secondary" [innerHTML]="selectedTopic.content"></div>
+
+                <!-- Interaction Bar -->
+                <div
+                    class="interaction-bar mt-5 pt-4 border-top d-flex justify-content-between align-items-center flex-wrap gap-3">
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-primary rounded-pill"><i class="bi bi-hand-thumbs-up me-2"></i>
+                            Helpful</button>
+                        <button class="btn btn-outline-secondary rounded-pill"><i class="bi bi-chat-left-text me-2"></i>
+                            Comment</button>
+                    </div>
+                    <button class="btn btn-violet rounded-pill shadow-sm px-4" (click)="toggleShareModal()">
+                        <i class="bi bi-share-fill me-2"></i> Share Lesson
+                    </button>
+                </div>
+            </div>
+            } @else {
+            <div class="d-flex flex-column align-items-center justify-content-center h-100 text-muted">
+                <i class="bi bi-journal-album display-1 mb-3 text-violet-soft"></i>
+                <p class="lead">Select a topic from the sidebar to start learning.</p>
+            </div>
+            }
+        </div>
+    </main>
+</div>
+
+<!-- Share Modal -->
+@if(showShareModal) {
+<div class="modal-backdrop fade show"></div>
+<div class="modal fade show d-block" tabindex="-1" role="dialog" aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 border-0 shadow-lg">
+            <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title fw-bold">Share this Lesson</h5>
+                <button type="button" class="btn-close" (click)="toggleShareModal()"></button>
+            </div>
+            <div class="modal-body text-center pb-5 pt-4">
+                <p class="text-muted mb-4">Spread the knowledge with your friends!</p>
+                <div class="d-flex justify-content-center gap-3 mb-4">
+                    <button class="btn btn-linkedin btn-social rounded-circle p-3 shadow-sm"><i
+                            class="bi bi-linkedin fs-4"></i></button>
+                    <button class="btn btn-whatsapp btn-social rounded-circle p-3 shadow-sm"><i
+                            class="bi bi-whatsapp fs-4"></i></button>
+                    <button class="btn btn-twitter btn-social rounded-circle p-3 shadow-sm"><i
+                            class="bi bi-twitter-x fs-4"></i></button>
+                </div>
+                <div class="input-group bg-light rounded-3 p-1 border">
+                    <input type="text" class="form-control border-0 bg-transparent"
+                        [value]="'https://caffeine.dev/learning/' + course?.id" readonly>
+                    <button class="btn btn-white shadow-sm rounded-3 fw-bold ps-3 pe-3" (click)="copyLink()">
+                        <i class="bi bi-copy me-1"></i> Copy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
