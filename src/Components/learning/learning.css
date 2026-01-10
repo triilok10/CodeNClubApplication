@@ -150,22 +150,37 @@
     .learning-sidebar {
         width: 100%;
         height: auto;
-        max-height: 400px;
+        max-height: 280px;
+        /* Reduced specific height */
         position: relative;
         border-right: none;
         border-bottom: 1px solid #e2e8f0;
+        overflow-y: auto;
     }
 
     .topic-list {
-        max-height: 250px;
+        max-height: none;
+        padding: 0.5rem;
+    }
+
+    .sidebar-header {
+        padding: 1rem !important;
+        /* Tighter header */
     }
 
     .content-scrollable {
         height: auto;
         overflow: visible;
+        padding: 1rem !important;
+        /* Reduced padding */
     }
 
     .content-wrapper {
         padding: 1.5rem !important;
+        margin-top: 1rem;
+    }
+
+    .topic-body h2 {
+        font-size: 1.75rem;
     }
 }

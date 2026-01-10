@@ -145,6 +145,8 @@
 /* Detail View Styles */
 .course-detail-hero {
     background: linear-gradient(to bottom, #ffffff, #f8fafc);
+    overflow: hidden;
+    /* Prevent glow overflow */
 }
 
 .btn-violet-solid {
@@ -198,4 +200,72 @@
 
 .animate-fade-up {
     animation: fadeInUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+
+    /* List View Mobile */
+    .courses-hero {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    .courses-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .filter-bar {
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        justify-content: flex-start !important;
+        flex-wrap: nowrap !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-filter {
+        flex-shrink: 0;
+    }
+
+    /* Detail View Mobile */
+    .course-detail-hero {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+        text-align: center;
+    }
+
+    .course-detail-hero h1 {
+        font-size: 2.2rem;
+        /* Smaller title */
+        word-wrap: break-word;
+    }
+
+    .course-detail-hero .row {
+        flex-direction: column-reverse;
+        /* Image on top? Or Title on top? User screenshot has Title on Top. Default is col-lg-6 which stacks. */
+    }
+
+    /* Ensure image is not too huge */
+    .course-detail-hero img {
+        margin-top: 2rem;
+        max-height: 300px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .course-detail-hero .d-flex {
+        justify-content: center;
+        /* Center buttons */
+        flex-direction: column;
+        /* Stack buttons on very small screens? */
+    }
+
+    .course-detail-hero .d-flex .btn {
+        width: 100%;
+        /* Full width buttons */
+    }
+
+    .course-detail-hero .badge-level {
+        margin-bottom: 0.5rem;
+    }
 }
