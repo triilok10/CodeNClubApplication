@@ -2,24 +2,9 @@
 
 <div class="community-page page-wrapper bg-light min-vh-100 pb-5 overflow-hidden">
 
-    <!-- Hero with Floating Bubbles -->
+    <!-- Hero Section -->
     <section class="community-hero position-relative pt-5 pb-5 text-center">
         <div class="glow-bg"></div>
-
-        <!-- Floating Bubbles (Absolute) -->
-        <div class="bubbles-container d-none d-lg-block">
-            @for(disc of discussions; track disc.name) {
-            <div class="chat-bubble position-absolute animate-float" [ngStyle]="disc.style">
-                <div class="bubble-content bg-white p-3 rounded-4 shadow-sm border d-flex align-items-center gap-3"
-                    style="max-width: 300px;">
-                    <img [src]="disc.avatar" class="rounded-circle object-fit-cover" width="50" height="50">
-                    <div class="text-start">
-                        <p class="small text-muted mb-0 fst-italic">"{{disc.text | slice:0:60}}..."</p>
-                    </div>
-                </div>
-            </div>
-            }
-        </div>
 
         <div class="container position-relative hero-content-box mt-5 pt-5 pb-5">
             <span class="badge bg-violet-soft text-violet mb-3 px-3 py-2 rounded-pill fw-bold">Growth & Mastery</span>
@@ -34,6 +19,59 @@
                 </button>
             </div>
         </div>
+
+        <!-- High Impact Featured Event (Refined White Theme) -->
+        <div class="container mb-5">
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="featured-event-card-refined bg-white rounded-5 shadow-lg p-4 p-md-4 border">
+                        <div class="row align-items-center g-4">
+                            <div class="col-lg-5">
+                                <div class="event-image-wrapper rounded-4 overflow-hidden shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8"
+                                        class="img-fluid" alt="Event Image">
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span
+                                        class="badge bg-violet-soft text-violet px-3 py-1 rounded-pill fw-bold small">UPCOMING
+                                        EVENT</span>
+                                    <span
+                                        class="badge bg-success-soft text-success px-3 py-1 rounded-pill fw-bold small">FREE</span>
+                                </div>
+                                <h3 class="fw-bold mb-2">Global Azure <span class="text-violet">Bootcamp 2024</span>
+                                </h3>
+                                <p class="text-muted small mb-4">
+                                    A full day of deep-dive sessions into Azure Cloud, AI, and Scalable Infrastructure.
+                                    Hosted by Microsoft MVPs and Caffeine.dev experts.
+                                </p>
+
+                                <div class="event-mini-meta d-flex flex-wrap gap-4 mb-4">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="bi bi-calendar3 text-violet"></i>
+                                        <span class="small fw-bold">12 Oct</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="bi bi-geo-alt text-violet"></i>
+                                        <span class="small fw-bold">Bangalore</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="bi bi-clock text-violet"></i>
+                                        <span class="small fw-bold">09:00 AM</span>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-violet-solid px-4 py-2 rounded-pill fw-bold shadow-sm"
+                                    [routerLink]="['/community/event', 'azure-bootcamp']">
+                                    Register Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- What We Do -->
@@ -45,71 +83,59 @@
         <div class="row g-4 justify-content-center">
             @for(feature of communityFeatures; track feature.title) {
             <div class="col-md-4">
-                <div class="feature-card h-100 p-5 rounded-4 bg-white border text-center hover-up transition">
-                    <div class="icon-box mb-4 mx-auto text-violet bg-violet-soft d-inline-flex p-4 rounded-4 shadow-sm">
-                        <i class="bi {{feature.icon}} fs-2"></i>
+                <div class="feature-card h-100 p-4 rounded-4 bg-white border text-center hover-up transition">
+                    <div
+                        class="icon-box-small mb-3 mx-auto text-violet bg-violet-soft d-inline-flex p-3 rounded-4 shadow-sm">
+                        <i class="bi {{feature.icon}} fs-4"></i>
                     </div>
-                    <h4 class="fw-bold mb-3">{{feature.title}}</h4>
-                    <p class="text-muted small lh-lg">{{feature.desc}}</p>
+                    <h5 class="fw-bold mb-2">{{feature.title}}</h5>
+                    <p class="text-muted small mb-0">{{feature.desc}}</p>
                 </div>
             </div>
             }
         </div>
     </section>
 
-    <!-- High Impact Featured Event -->
-    <section class="featured-event-section py-5 my-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-11">
-                    <div class="featured-event-card position-relative overflow-hidden rounded-5 shadow-2xl p-4 p-md-5">
-                        <div class="featured-event-overlay"></div>
-                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8" class="featured-event-bg"
-                            alt="Event Background">
+    <!-- Community Members (Happy Faces) -->
+    <section class="community-members-preview bg-white py-5 border-top position-relative overflow-hidden">
+        <!-- Floating Bubbles Moved Here -->
+        <div class="bubbles-container-refined d-none d-lg-block">
+            @for(disc of discussions; track disc.name) {
+            <div class="chat-bubble-refined position-absolute animate-float" [ngStyle]="disc.style">
+                <div class="bubble-content-refined bg-white p-2 rounded-4 shadow-sm border d-flex align-items-center gap-2"
+                    style="max-width: 250px;">
+                    <img [src]="disc.avatar" class="rounded-circle object-fit-cover" width="35" height="35">
+                    <div class="text-start">
+                        <p class="x-small text-muted mb-0 fst-italic">"{{disc.text | slice:0:40}}..."</p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
 
-                        <div class="row align-items-center position-relative z-2 g-5 text-white">
-                            <div class="col-lg-7">
-                                <span class="badge bg-warning text-dark mb-4 px-4 py-2 rounded-pill fw-bold h6">UPCOMING
-                                    FLAGSHIP EVENT</span>
-                                <h2 class="display-2 fw-bold mb-4 text-white">Global Azure <br><span
-                                        class="text-warning">Bootcamp 2024</span></h2>
-                                <p class="lead mb-5 text-white-50 opacity-100" style="max-width: 550px;">
-                                    A full day of deep-dive sessions into Azure Cloud, AI, and Scalable Infrastructure.
-                                    Hosted by Microsoft MVPs and Caffeine.dev experts.
-                                </p>
-                                <div class="event-meta-grid mb-5">
-                                    <div class="meta-item">
-                                        <i class="bi bi-calendar3 fs-4 text-warning"></i>
-                                        <div>
-                                            <span class="d-block fw-bold display-6">12</span>
-                                            <span class="text-uppercase small fw-bold opacity-75">October</span>
-                                        </div>
-                                    </div>
-                                    <div class="divider"></div>
-                                    <div class="meta-item">
-                                        <i class="bi bi-geo-alt fs-4 text-warning"></i>
-                                        <div>
-                                            <span class="d-block fw-bold h4 mb-0">Bangalore</span>
-                                            <span class="text-uppercase small fw-bold opacity-75">Tech Park</span>
-                                        </div>
-                                    </div>
-                                    <div class="divider"></div>
-                                    <div class="meta-item">
-                                        <i class="bi bi-clock fs-4 text-warning"></i>
-                                        <div>
-                                            <span class="d-block fw-bold h4 mb-0">09:00 AM</span>
-                                            <span class="text-uppercase small fw-bold opacity-75">IST</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-wrap gap-3">
-                                    <button
-                                        class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-bold text-dark shadow-lg"
-                                        [routerLink]="['/community/event', 'azure-bootcamp']">
-                                        About Event & Register
-                                    </button>
-                                </div>
-                            </div>
+        <div class="container position-relative z-2">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-3">Community Spotlight</h2>
+                <p class="text-muted">Meet the developers, mentors, and learners who make this community vibrant.</p>
+            </div>
+
+            <div class="members-faces-grid mb-5">
+                <div class="d-flex flex-wrap justify-content-center gap-4">
+                    @for(member of membersPreview; track member.id) {
+                    <div class="member-face-item" (click)="selectMember(member)">
+                        <img [src]="member.avatar" [alt]="member.name"
+                            class="rounded-circle shadow-sm border border-2 border-white hover-up transition" width="80"
+                            height="80">
+                        <div class="member-mini-info text-center mt-2">
+                            <span class="small fw-bold d-block">{{member.name}}</span>
+                        </div>
+                    </div>
+                    }
+                    <div class="view-more-faces-refined d-flex align-items-center justify-content-center rounded-circle border-2 hover-up transition cursor-pointer"
+                        style="width: 80px; height: 80px;" [routerLink]="['/community/members']">
+                        <div class="text-center">
+                            <i class="bi bi-plus-lg d-block fs-4"></i>
+                            <span class="fw-bold small">More</span>
                         </div>
                     </div>
                 </div>

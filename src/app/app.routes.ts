@@ -16,6 +16,7 @@ import { GetStarted } from '../Components/Auth/get-started/get-started';
 import { Learning } from '../Components/learning/learning';
 import { ProjectDetail } from '../Components/projects/project-detail/project-detail';
 import { EventDetail } from '../Components/community/event-detail/event-detail';
+import { CommunityMembers } from '../Components/community/members/members';
 
 export const routes: Routes = [
   {
@@ -53,6 +54,10 @@ export const routes: Routes = [
   {
     path: 'community/event/:id',
     component: EventDetail,
+  },
+  {
+    path: 'community/members',
+    component: CommunityMembers,
   },
   {
     path: 'blog',

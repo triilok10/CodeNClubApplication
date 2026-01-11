@@ -18,6 +18,8 @@
 .hero-content-box {
     z-index: 10;
     position: relative;
+    padding-top: 100px;
+    /* Space for fixed header */
 }
 
 .bubbles-container {
@@ -69,15 +71,16 @@
 }
 
 .feature-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 30px 60px rgba(124, 58, 237, 0.08);
-    border-color: rgba(124, 58, 237, 0.2);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 40px 80px rgba(124, 58, 237, 0.12);
+    border-color: var(--violet);
 }
 
 .feature-card:hover .icon-box {
     background: var(--violet) !important;
     color: white !important;
-    transform: scale(1.1) rotate(5deg);
+    transform: translateY(-5px) rotate(8deg);
+    box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
 }
 
 .icon-box {
@@ -89,54 +92,74 @@
     transition: all 0.4s ease;
 }
 
-/* High Impact Featured Event */
-.featured-event-section {
-    position: relative;
+/* Refined White Theme Event Card */
+.featured-event-card-refined {
+    transition: all 0.4s ease;
+    border: 1px solid rgba(124, 58, 237, 0.1) !important;
 }
 
-.featured-event-card {
-    min-height: 700px;
-    background: #000;
+.featured-event-card-refined:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.08) !important;
 }
 
-.featured-event-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
+.event-image-wrapper {
+    height: 250px;
+}
+
+.event-image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.6;
-    z-index: 0;
+}
+
+.icon-box-small {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.feature-card h5 {
+    font-size: 1.1rem;
+}
+
+.feature-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
 }
 
 .featured-event-overlay {
+    display: none;
+}
+
+/* Refined Bubbles for Spotlight */
+.bubbles-container-refined {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.7) 50%, rgba(15, 23, 42, 0.2) 100%);
     z-index: 1;
+    pointer-events: none;
 }
 
-.event-meta-grid {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-    flex-wrap: wrap;
+.chat-bubble-refined {
+    z-index: 1;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.03));
 }
 
-.meta-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.x-small {
+    font-size: 0.7rem;
+    line-height: 1.2;
 }
 
-.event-meta-grid .divider {
-    width: 1px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
+.bg-success-soft {
+    background-color: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
 }
 
 .shadow-2xl {
@@ -176,6 +199,50 @@
     border-color: var(--violet);
     box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
     background: white;
+}
+
+/* Community Spotlight Section */
+.community-members-preview {
+    background: linear-gradient(to bottom, #ffffff, #f8fafc);
+}
+
+.members-faces-grid .member-face-item {
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+}
+
+.member-face-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.member-face-item:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2) !important;
+}
+
+.view-more-faces-refined {
+    cursor: pointer;
+    background: white;
+    border: 2px dashed var(--violet);
+    color: var(--violet);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.view-more-faces-refined:hover {
+    background: var(--violet);
+    color: white !important;
+    border-style: solid;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2);
+}
+
+.view-more-faces-refined:hover i,
+.view-more-faces-refined:hover span {
+    color: white !important;
 }
 
 /* Responsive */
