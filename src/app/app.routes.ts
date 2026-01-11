@@ -6,7 +6,6 @@ import { Home } from '../Components/home/home';
 import { Courses } from '../Components/courses/courses';
 import { Community } from '../Components/community/community';
 import { Projects } from '../Components/projects/projects';
-import { Events } from '../Components/events/events';
 import { Blog } from '../Components/blog/blog';
 import { Challenges } from '../Components/challenges/challenges';
 import { Pro } from '../Components/pro/pro';
@@ -16,6 +15,7 @@ import { GetStarted } from '../Components/Auth/get-started/get-started';
 
 import { Learning } from '../Components/learning/learning';
 import { ProjectDetail } from '../Components/projects/project-detail/project-detail';
+import { EventDetail } from '../Components/community/event-detail/event-detail';
 
 export const routes: Routes = [
   {
@@ -48,7 +48,11 @@ export const routes: Routes = [
   },
   {
     path: 'events',
-    component: Events,
+    component: Community,
+  },
+  {
+    path: 'community/event/:id',
+    component: EventDetail,
   },
   {
     path: 'blog',

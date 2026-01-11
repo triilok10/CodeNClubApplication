@@ -1,0 +1,308 @@
+<app-header></app-header>
+
+@if(event) {
+<div class="event-detail-page bg-light min-vh-100 pb-5">
+
+    <!-- Hero Section -->
+    <section class="event-pro-hero position-relative py-5 overflow-hidden">
+        <div class="hero-bg-overlay"></div>
+        <img [src]="event.image" class="hero-bg-img" alt="Hero Background">
+
+        <div class="container position-relative z-2 pt-5 pb-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7 text-white">
+                    <a routerLink="/community"
+                        class="btn btn-link text-white-50 p-0 text-decoration-none mb-4 back-link">
+                        <i class="bi bi-arrow-left me-2"></i> Back to Community
+                    </a>
+                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
+                        {{ event.type }}
+                    </span>
+                    <h1 class="display-3 fw-bold mb-4">{{ event.title }}</h1>
+
+                    <div class="d-flex flex-wrap gap-4 mb-5 hero-meta">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-calendar3 text-warning fs-4"></i>
+                            <span class="fw-medium h5 mb-0">{{ event.date }} {{ event.month }}, 2024</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-geo-alt text-warning fs-4"></i>
+                            <span class="fw-medium h5 mb-0">{{ event.location }}</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-bold text-dark shadow-xl"
+                            (click)="openRegisterModal()">
+                            Secure Your Spot
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mt-n5 position-relative z-3">
+        <div class="row g-4">
+            <!-- Left Side: Detail Cards -->
+            <div class="col-lg-8">
+                <!-- About -->
+                <div class="bg-white p-5 rounded-4 border shadow-sm mb-4 section-card">
+                    <h2 class="fw-bold mb-4 text-violet">About the Event</h2>
+                    <p class="lead text-muted lh-lg">{{ event.description }}</p>
+                </div>
+
+                <!-- Speakers -->
+                <div class="bg-white p-5 rounded-4 border shadow-sm mb-4 section-card">
+                    <h2 class="fw-bold mb-5 text-violet">Speakers & Mentors</h2>
+                    <div class="row g-4">
+                        @for(speaker of event.speakers; track speaker.name) {
+                        <div class="col-md-6">
+                            <div class="speaker-card p-4 rounded-4 border text-center hover-lift transition">
+                                <img [src]="speaker.image" class="rounded-circle mb-4 border-4 border-white shadow-sm"
+                                    width="120" height="120">
+                                <h4 class="fw-bold mb-2">{{ speaker.name }}</h4>
+                                <p class="text-violet fw-bold small mb-3">{{ speaker.role }}</p>
+                                <p class="text-muted small mb-0">{{ speaker.bio }}</p>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Agenda -->
+                <div class="bg-white p-5 rounded-4 border shadow-sm section-card">
+                    <h2 class="fw-bold mb-5 text-violet">Event Agenda</h2>
+                    <div class="timeline">
+                        @for(item of event.agenda; track item.topic) {
+                        <div class="timeline-item d-flex gap-4 mb-5">
+                            <div class="time-box">
+                                <span class="badge bg-violet-soft text-violet px-3 py-2 rounded-3 fw-bold">{{ item.time
+                                    }}</span>
+                            </div>
+                            <div class="content">
+                                <h5 class="fw-bold mb-1">{{ item.topic }}</h5>
+                                <p class="text-muted small mb-0">{{ item.description }}</p>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Sidebar -->
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 100px;">
+                    <div class="bg-violet-solid p-5 rounded-4 shadow-lg text-white mb-4">
+                        <h4 class="fw-bold mb-3">Limited Engagement</h4>
+                        <p class="opacity-75 mb-4">Registration is closing soon. Ensure your participation in the year's
+                            biggest cloud community event.</p>
+                        <div class="d-grid">
+                            <button class="btn btn-warning btn-lg py-3 rounded-pill fw-bold text-dark"
+                                (click)="openRegisterModal()">
+                                Register for Free
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-4 border shadow-sm">
+                        <h5 class="fw-bold mb-4">Location Gallery</h5>
+                        <div class="row g-2">
+                            @for(img of event.gallery; track img) {
+                            <div class="col-6">
+                                <img [src]="img" class="img-fluid rounded-3 object-fit-cover shadow-sm border"
+                                    style="height: 100px; width: 100%;">
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pro Multi-Step Registration Modal -->
+@if(showModal) {
+<div class="modal-overlay">
+    <div class="modal-window">
+        <!-- Progress Bar -->
+        <div class="progress-bar-container">
+            <div class="progress-fill" [style.width]="currentStep === 1 ? '50%' : '100%'"></div>
+        </div>
+
+        <div class="modal-header-pro p-4 p-md-5 bg-light border-bottom">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                @if(!isRegistered) {
+                <div>
+                    <span class="text-uppercase small fw-bold text-violet mb-1 d-block">Step {{currentStep}} of 2</span>
+                    <h3 class="fw-bold mb-0">
+                        {{ currentStep === 1 ? 'Personal Details' : 'Professional Background' }}
+                    </h3>
+                </div>
+                } @else {
+                <h3 class="fw-bold mb-0 text-success">Registration Confirmed</h3>
+                }
+                <button class="btn-close-pro" (click)="closeModal()">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="modal-body-pro p-4 p-md-5">
+            @if(!isRegistered) {
+            <form #regForm="ngForm" (ngSubmit)="submitRegistration()">
+
+                @if(currentStep === 1) {
+                <div class="step-animation-in">
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <div class="input-pro-group">
+                                <label class="label-pro">First Name</label>
+                                <input type="text" class="input-pro" placeholder="John"
+                                    [(ngModel)]="registration.firstName" name="firstName" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-pro-group">
+                                <label class="label-pro">Last Name</label>
+                                <input type="text" class="input-pro" placeholder="Doe"
+                                    [(ngModel)]="registration.lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-pro-group">
+                                <label class="label-pro">Work Email Address</label>
+                                <input type="email" class="input-pro" placeholder="john@company.com"
+                                    [(ngModel)]="registration.email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-pro-group">
+                                <label class="label-pro">Phone Number</label>
+                                <input type="tel" class="input-pro" placeholder="+91 98765 43210"
+                                    [(ngModel)]="registration.phone" name="phone" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="designation-selection mb-4">
+                        <label class="label-pro mb-3">I am attending as a...</label>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <input type="radio" class="btn-check" name="designation" id="student" value="Student"
+                                    [(ngModel)]="registration.designation">
+                                <label class="btn btn-outline-pro w-100 py-3 rounded-4" for="student">
+                                    <i class="bi bi-mortarboard me-2"></i> Student
+                                </label>
+                            </div>
+                            <div class="col-6">
+                                <input type="radio" class="btn-check" name="designation" id="prof" value="Professional"
+                                    [(ngModel)]="registration.designation">
+                                <label class="btn btn-outline-pro w-100 py-3 rounded-4" for="prof">
+                                    <i class="bi bi-briefcase me-2"></i> Professional
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid mt-5">
+                        <button type="button" class="btn btn-violet-solid btn-xl py-3 rounded-pill fw-bold"
+                            (click)="nextStep()" [disabled]="!registration.firstName || !registration.email">
+                            Continue to Next Step <i class="bi bi-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+                }
+
+                @if(currentStep === 2) {
+                <div class="step-animation-in">
+
+                    @if(registration.designation === 'Student') {
+                    <div class="row g-4 mb-4">
+                        <div class="col-12">
+                            <div class="input-pro-group">
+                                <label class="label-pro">College / University Name</label>
+                                <input type="text" class="input-pro" placeholder="Enter your institution"
+                                    [(ngModel)]="registration.college" name="college" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-pro-group">
+                                <label class="label-pro">Current Class / Batch</label>
+                                <input type="text" class="input-pro" placeholder="e.g. B.Tech 2025 Batch"
+                                    [(ngModel)]="registration.class" name="class" required>
+                            </div>
+                        </div>
+                    </div>
+                    } @else {
+                    <div class="row g-4 mb-4">
+                        <div class="col-12">
+                            <div class="input-pro-group">
+                                <label class="label-pro">Current Organization</label>
+                                <input type="text" class="input-pro" placeholder="e.g. Google, Microsoft"
+                                    [(ngModel)]="registration.company" name="company" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-pro-group">
+                                <label class="label-pro">Years of Professional Experience</label>
+                                <input type="number" class="input-pro" placeholder="e.g. 5"
+                                    [(ngModel)]="registration.experience" name="experience" required>
+                            </div>
+                        </div>
+                    </div>
+                    }
+
+                    <div class="terms-check mb-4 p-3 bg-light rounded-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="terms" required checked>
+                            <label class="form-check-label small text-muted" for="terms">
+                                I agree to the Caffeine.dev code of conduct and privacy policy. I understand that my
+                                data will be used for event logistics.
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-light w-100 py-3 rounded-pill fw-bold"
+                                (click)="prevStep()">
+                                Back
+                            </button>
+                        </div>
+                        <div class="col-md-8">
+                            <button type="submit" class="btn btn-violet-solid w-100 py-3 rounded-pill fw-bold">
+                                Complete Registration
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                }
+
+            </form>
+            } @else {
+            <div class="registration-success-view text-center py-5 animate-fade-in">
+                <div class="success-icon-wrapper mb-4">
+                    <i class="bi bi-check-circle-fill display-1 text-success"></i>
+                </div>
+                <h2 class="fw-bold mb-3">You're on the list!</h2>
+                <p class="text-muted lead mb-5">We've sent a configuration email with all the event details to your
+                    inbox. Get ready for an amazing experience!</p>
+                <div class="d-grid gap-3">
+                    <button class="btn btn-violet-solid btn-lg py-3 rounded-pill fw-bold" (click)="closeModal()">Return
+                        to Event</button>
+                    <button class="btn btn-light btn-lg py-3 rounded-pill fw-bold text-muted border"
+                        routerLink="/community">Explore Other Events</button>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+}
+
+}
+
+<app-footer></app-footer>

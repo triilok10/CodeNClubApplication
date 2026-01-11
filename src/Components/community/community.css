@@ -1,59 +1,198 @@
-/* Dark Premium Theme */
-.bg-dark-premium {
-    background-color: #0f172a;
+/* Background */
+.community-page {
+    background: #f8fafc;
 }
 
-.text-gray-300 {
-    color: #d1d5db;
+.glow-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
 }
 
-.text-gray-400 {
-    color: #9ca3af;
+/* Hero Content Layering */
+.hero-content-box {
+    z-index: 10;
+    position: relative;
 }
 
-.text-violet {
-    color: #8b5cf6;
+.bubbles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
 }
 
-.bg-violet-soft {
-    background-color: rgba(139, 92, 246, 0.1);
+/* Hero Bubbles */
+.chat-bubble {
+    z-index: 1;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
 }
 
-.border-violet-subtle {
-    border-color: rgba(139, 92, 246, 0.3);
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
-/* Buttons */
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.chat-bubble:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.chat-bubble:nth-child(3) {
+    animation-delay: 4s;
+}
+
+/* Feature Cards */
+.feature-card {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid #f1f5f9;
+    background: white;
+}
+
+.feature-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 60px rgba(124, 58, 237, 0.08);
+    border-color: rgba(124, 58, 237, 0.2);
+}
+
+.feature-card:hover .icon-box {
+    background: var(--violet) !important;
+    color: white !important;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.icon-box {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+/* High Impact Featured Event */
+.featured-event-section {
+    position: relative;
+}
+
+.featured-event-card {
+    min-height: 700px;
+    background: #000;
+}
+
+.featured-event-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.featured-event-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.7) 50%, rgba(15, 23, 42, 0.2) 100%);
+    z-index: 1;
+}
+
+.event-meta-grid {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.event-meta-grid .divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.shadow-2xl {
+    box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+}
+
+/* Utilities */
 .btn-violet-solid {
-    background-color: #7c3aed;
+    background: var(--violet);
     color: white;
     border: none;
-    transition: 0.3s;
+    transition: all 0.2s;
 }
 
 .btn-violet-solid:hover {
-    background-color: #6d28d9;
+    background: #6d28d9;
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
 }
 
-/* Glass Cards */
-.bg-glass {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
+.bg-violet-soft {
+    background-color: rgba(124, 58, 237, 0.1);
+    color: var(--violet);
 }
 
-.border-white-10 {
-    border-color: rgba(255, 255, 255, 0.1);
+/* Professional Form Fields (Preview for Event Detail) */
+.form-pro {
+    background: transparent;
+    border: 1px solid #e2e8f0;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    transition: all 0.2s;
 }
 
-/* Glow Animation */
-.glow-effect {
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, rgba(15, 23, 42, 0) 70%);
-    pointer-events: none;
+.form-pro:focus {
+    border-color: var(--violet);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+    background: white;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .featured-event-card {
+        min-height: auto;
+    }
+
+    .event-meta-grid {
+        gap: 1.5rem;
+    }
+
+    .event-meta-grid .divider {
+        display: none;
+    }
+
+    .display-2 {
+        font-size: 3rem;
+    }
 }

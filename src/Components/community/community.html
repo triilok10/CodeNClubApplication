@@ -1,36 +1,117 @@
 <app-header></app-header>
 
-<div class="page-wrapper bg-dark-premium min-vh-100 pb-5">
+<div class="community-page page-wrapper bg-light min-vh-100 pb-5 overflow-hidden">
 
-    <!-- Hero -->
-    <section class="hero-section text-center py-5 position-relative overflow-hidden text-white">
-        <div class="glow-effect"></div>
-        <div class="container position-relative z-2 mt-5">
-            <span class="badge rounded-pill bg-violet-soft text-violet mb-3 border border-violet-subtle">25,000+ Members
-                Strong</span>
-            <h1 class="display-3 fw-bold mb-4">Code Better. <span class="text-violet">Together.</span></h1>
-            <p class="lead text-gray-300 mx-auto mb-5" style="max-width: 600px;">
-                Join the most active community of .NET and Cloud engineers. No recruiters, just engineers solving real
-                problems.
+    <!-- Hero with Floating Bubbles -->
+    <section class="community-hero position-relative pt-5 pb-5 text-center">
+        <div class="glow-bg"></div>
+
+        <!-- Floating Bubbles (Absolute) -->
+        <div class="bubbles-container d-none d-lg-block">
+            @for(disc of discussions; track disc.name) {
+            <div class="chat-bubble position-absolute animate-float" [ngStyle]="disc.style">
+                <div class="bubble-content bg-white p-3 rounded-4 shadow-sm border d-flex align-items-center gap-3"
+                    style="max-width: 300px;">
+                    <img [src]="disc.avatar" class="rounded-circle object-fit-cover" width="50" height="50">
+                    <div class="text-start">
+                        <p class="small text-muted mb-0 fst-italic">"{{disc.text | slice:0:60}}..."</p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+
+        <div class="container position-relative hero-content-box mt-5 pt-5 pb-5">
+            <span class="badge bg-violet-soft text-violet mb-3 px-3 py-2 rounded-pill fw-bold">Growth & Mastery</span>
+            <h1 class="display-3 fw-bold mb-4">Master Your Craft <span class="text-violet">In Public</span></h1>
+            <p class="lead text-muted mx-auto mb-5" style="max-width: 600px;">
+                Learn, build, and grow alongside a global community of world-class developers. Transform your potential
+                into industry-leading skills.
             </p>
             <div class="d-flex justify-content-center gap-3">
-                <button class="btn btn-violet-solid btn-lg px-4"><i class="bi bi-discord me-2"></i> Join
-                    Discord</button>
-                <button class="btn btn-outline-light btn-lg px-4">Read Guidelines</button>
+                <button class="btn btn-violet-solid btn-lg px-5 rounded-pill shadow-lg" routerLink="/courses">
+                    Explore Learning Paths
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Features Grid -->
-    <section class="container py-5">
-        <div class="row g-4">
-            <div class="col-md-4" *ngFor="let ev of events">
-                <div class="feature-card h-100 p-4 rounded-4 bg-glass border border-white-10 text-white">
-                    <div class="icon-box mb-3 text-violet bg-violet-soft d-inline-flex p-3 rounded-circle">
-                        <i class="bi {{ev.icon}} fs-3"></i>
+    <!-- What We Do -->
+    <section class="container py-5 mb-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3">How we grow together</h2>
+            <p class="text-muted">A professional ecosystem designed for modern developers.</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            @for(feature of communityFeatures; track feature.title) {
+            <div class="col-md-4">
+                <div class="feature-card h-100 p-5 rounded-4 bg-white border text-center hover-up transition">
+                    <div class="icon-box mb-4 mx-auto text-violet bg-violet-soft d-inline-flex p-4 rounded-4 shadow-sm">
+                        <i class="bi {{feature.icon}} fs-2"></i>
                     </div>
-                    <h4 class="fw-bold">{{ev.title}}</h4>
-                    <p class="text-gray-400">{{ev.time}}</p>
+                    <h4 class="fw-bold mb-3">{{feature.title}}</h4>
+                    <p class="text-muted small lh-lg">{{feature.desc}}</p>
+                </div>
+            </div>
+            }
+        </div>
+    </section>
+
+    <!-- High Impact Featured Event -->
+    <section class="featured-event-section py-5 my-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-11">
+                    <div class="featured-event-card position-relative overflow-hidden rounded-5 shadow-2xl p-4 p-md-5">
+                        <div class="featured-event-overlay"></div>
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8" class="featured-event-bg"
+                            alt="Event Background">
+
+                        <div class="row align-items-center position-relative z-2 g-5 text-white">
+                            <div class="col-lg-7">
+                                <span class="badge bg-warning text-dark mb-4 px-4 py-2 rounded-pill fw-bold h6">UPCOMING
+                                    FLAGSHIP EVENT</span>
+                                <h2 class="display-2 fw-bold mb-4 text-white">Global Azure <br><span
+                                        class="text-warning">Bootcamp 2024</span></h2>
+                                <p class="lead mb-5 text-white-50 opacity-100" style="max-width: 550px;">
+                                    A full day of deep-dive sessions into Azure Cloud, AI, and Scalable Infrastructure.
+                                    Hosted by Microsoft MVPs and Caffeine.dev experts.
+                                </p>
+                                <div class="event-meta-grid mb-5">
+                                    <div class="meta-item">
+                                        <i class="bi bi-calendar3 fs-4 text-warning"></i>
+                                        <div>
+                                            <span class="d-block fw-bold display-6">12</span>
+                                            <span class="text-uppercase small fw-bold opacity-75">October</span>
+                                        </div>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="meta-item">
+                                        <i class="bi bi-geo-alt fs-4 text-warning"></i>
+                                        <div>
+                                            <span class="d-block fw-bold h4 mb-0">Bangalore</span>
+                                            <span class="text-uppercase small fw-bold opacity-75">Tech Park</span>
+                                        </div>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="meta-item">
+                                        <i class="bi bi-clock fs-4 text-warning"></i>
+                                        <div>
+                                            <span class="d-block fw-bold h4 mb-0">09:00 AM</span>
+                                            <span class="text-uppercase small fw-bold opacity-75">IST</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <button
+                                        class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-bold text-dark shadow-lg"
+                                        [routerLink]="['/community/event', 'azure-bootcamp']">
+                                        About Event & Register
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
